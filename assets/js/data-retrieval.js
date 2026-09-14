@@ -44,6 +44,28 @@ window.RETRIEVAL = {
    "text": "a dull ceramic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 26,
+   "anchors": {
+    "low": {
+     "clip_id": "64_CeramicMug:row_2572",
+     "object_name": "Mug (ceramic)",
+     "strike_point": 2,
+     "mic_ring": 4,
+     "mic_angle_deg": 40,
+     "target_z": -2.029,
+     "audio_path": "audio/test/original/reference/64_CeramicMug__row_2572.flac",
+     "audio_url": "assets/audio/retrieval/64_CeramicMug__row_2572.mp3"
+    },
+    "high": {
+     "clip_id": "64_CeramicMug:row_2737",
+     "object_name": "Mug (ceramic)",
+     "strike_point": 2,
+     "mic_ring": 3,
+     "mic_angle_deg": 100,
+     "target_z": 1.628,
+     "audio_path": "audio/test/original/reference/64_CeramicMug__row_2737.flac",
+     "audio_url": "assets/audio/retrieval/64_CeramicMug__row_2737.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -325,6 +347,28 @@ window.RETRIEVAL = {
    "text": "a bright ceramic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 74,
+   "anchors": {
+    "low": {
+     "clip_id": "64_CeramicMug:row_2572",
+     "object_name": "Mug (ceramic)",
+     "strike_point": 2,
+     "mic_ring": 4,
+     "mic_angle_deg": 40,
+     "target_z": -2.029,
+     "audio_path": "audio/test/original/reference/64_CeramicMug__row_2572.flac",
+     "audio_url": "assets/audio/retrieval/64_CeramicMug__row_2572.mp3"
+    },
+    "high": {
+     "clip_id": "64_CeramicMug:row_2737",
+     "object_name": "Mug (ceramic)",
+     "strike_point": 2,
+     "mic_ring": 3,
+     "mic_angle_deg": 100,
+     "target_z": 1.628,
+     "audio_path": "audio/test/original/reference/64_CeramicMug__row_2737.flac",
+     "audio_url": "assets/audio/retrieval/64_CeramicMug__row_2737.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -606,6 +650,28 @@ window.RETRIEVAL = {
    "text": "a soft ceramic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 77,
+   "anchors": {
+    "low": {
+     "clip_id": "64_CeramicMug:row_1252",
+     "object_name": "Mug (ceramic)",
+     "strike_point": 1,
+     "mic_ring": 4,
+     "mic_angle_deg": 0,
+     "target_z": -2.503,
+     "audio_path": "audio/test/original/reference/64_CeramicMug__row_1252.flac",
+     "audio_url": "assets/audio/retrieval/64_CeramicMug__row_1252.mp3"
+    },
+    "high": {
+     "clip_id": "64_CeramicMug:row_1987",
+     "object_name": "Mug (ceramic)",
+     "strike_point": 3,
+     "mic_ring": 1,
+     "mic_angle_deg": 60,
+     "target_z": 3.834,
+     "audio_path": "audio/test/original/reference/64_CeramicMug__row_1987.flac",
+     "audio_url": "assets/audio/retrieval/64_CeramicMug__row_1987.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -887,6 +953,28 @@ window.RETRIEVAL = {
    "text": "a sharp ceramic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 23,
+   "anchors": {
+    "low": {
+     "clip_id": "64_CeramicMug:row_1252",
+     "object_name": "Mug (ceramic)",
+     "strike_point": 1,
+     "mic_ring": 4,
+     "mic_angle_deg": 0,
+     "target_z": -2.503,
+     "audio_path": "audio/test/original/reference/64_CeramicMug__row_1252.flac",
+     "audio_url": "assets/audio/retrieval/64_CeramicMug__row_1252.mp3"
+    },
+    "high": {
+     "clip_id": "64_CeramicMug:row_1987",
+     "object_name": "Mug (ceramic)",
+     "strike_point": 3,
+     "mic_ring": 1,
+     "mic_angle_deg": 60,
+     "target_z": 3.834,
+     "audio_path": "audio/test/original/reference/64_CeramicMug__row_1987.flac",
+     "audio_url": "assets/audio/retrieval/64_CeramicMug__row_1987.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -1168,6 +1256,28 @@ window.RETRIEVAL = {
    "text": "a short-dry ceramic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 64,
+   "anchors": {
+    "low": {
+     "clip_id": "75_FlowerpotSmallCeramic:row_7",
+     "object_name": "Flowerpot (small ceramic)",
+     "strike_point": 1,
+     "mic_ring": 1,
+     "mic_angle_deg": 0,
+     "target_z": -1.29,
+     "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+     "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+    },
+    "high": {
+     "clip_id": "64_CeramicMug:row_2152",
+     "object_name": "Mug (ceramic)",
+     "strike_point": 3,
+     "mic_ring": 4,
+     "mic_angle_deg": 100,
+     "target_z": 0.879,
+     "audio_path": "audio/test/original/reference/64_CeramicMug__row_2152.flac",
+     "audio_url": "assets/audio/retrieval/64_CeramicMug__row_2152.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -1449,6 +1559,28 @@ window.RETRIEVAL = {
    "text": "a long-ringing ceramic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 36,
+   "anchors": {
+    "low": {
+     "clip_id": "75_FlowerpotSmallCeramic:row_7",
+     "object_name": "Flowerpot (small ceramic)",
+     "strike_point": 1,
+     "mic_ring": 1,
+     "mic_angle_deg": 0,
+     "target_z": -1.29,
+     "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+     "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+    },
+    "high": {
+     "clip_id": "64_CeramicMug:row_2152",
+     "object_name": "Mug (ceramic)",
+     "strike_point": 3,
+     "mic_ring": 4,
+     "mic_angle_deg": 100,
+     "target_z": 0.879,
+     "audio_path": "audio/test/original/reference/64_CeramicMug__row_2152.flac",
+     "audio_url": "assets/audio/retrieval/64_CeramicMug__row_2152.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -1730,6 +1862,28 @@ window.RETRIEVAL = {
    "text": "a dull metal impact sound",
    "pool_size": 400,
    "relevant_in_pool": 7,
+   "anchors": {
+    "low": {
+     "clip_id": "92_MetalSpatula:row_1432",
+     "object_name": "Spatula (metal)",
+     "strike_point": 1,
+     "mic_ring": 4,
+     "mic_angle_deg": 60,
+     "target_z": -1.445,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1432.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1432.mp3"
+    },
+    "high": {
+     "clip_id": "92_MetalSpatula:row_2272",
+     "object_name": "Spatula (metal)",
+     "strike_point": 4,
+     "mic_ring": 4,
+     "mic_angle_deg": 140,
+     "target_z": 1.39,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2272.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2272.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -2011,6 +2165,28 @@ window.RETRIEVAL = {
    "text": "a bright metal impact sound",
    "pool_size": 400,
    "relevant_in_pool": 93,
+   "anchors": {
+    "low": {
+     "clip_id": "92_MetalSpatula:row_1432",
+     "object_name": "Spatula (metal)",
+     "strike_point": 1,
+     "mic_ring": 4,
+     "mic_angle_deg": 60,
+     "target_z": -1.445,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1432.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1432.mp3"
+    },
+    "high": {
+     "clip_id": "92_MetalSpatula:row_2272",
+     "object_name": "Spatula (metal)",
+     "strike_point": 4,
+     "mic_ring": 4,
+     "mic_angle_deg": 140,
+     "target_z": 1.39,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2272.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2272.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -2292,6 +2468,28 @@ window.RETRIEVAL = {
    "text": "a soft metal impact sound",
    "pool_size": 400,
    "relevant_in_pool": 67,
+   "anchors": {
+    "low": {
+     "clip_id": "92_MetalSpatula:row_2842",
+     "object_name": "Spatula (metal)",
+     "strike_point": 2,
+     "mic_ring": 2,
+     "mic_angle_deg": 140,
+     "target_z": -2.343,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2842.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2842.mp3"
+    },
+    "high": {
+     "clip_id": "92_MetalSpatula:row_1267",
+     "object_name": "Spatula (metal)",
+     "strike_point": 1,
+     "mic_ring": 1,
+     "mic_angle_deg": 20,
+     "target_z": 1.229,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1267.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1267.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -2573,6 +2771,28 @@ window.RETRIEVAL = {
    "text": "a sharp metal impact sound",
    "pool_size": 400,
    "relevant_in_pool": 33,
+   "anchors": {
+    "low": {
+     "clip_id": "92_MetalSpatula:row_2842",
+     "object_name": "Spatula (metal)",
+     "strike_point": 2,
+     "mic_ring": 2,
+     "mic_angle_deg": 140,
+     "target_z": -2.343,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2842.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2842.mp3"
+    },
+    "high": {
+     "clip_id": "92_MetalSpatula:row_1267",
+     "object_name": "Spatula (metal)",
+     "strike_point": 1,
+     "mic_ring": 1,
+     "mic_angle_deg": 20,
+     "target_z": 1.229,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1267.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1267.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -2854,6 +3074,28 @@ window.RETRIEVAL = {
    "text": "a short-dry metal impact sound",
    "pool_size": 400,
    "relevant_in_pool": 22,
+   "anchors": {
+    "low": {
+     "clip_id": "92_MetalSpatula:row_1342",
+     "object_name": "Spatula (metal)",
+     "strike_point": 1,
+     "mic_ring": 2,
+     "mic_angle_deg": 40,
+     "target_z": -0.467,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1342.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1342.mp3"
+    },
+    "high": {
+     "clip_id": "92_MetalSpatula:row_1582",
+     "object_name": "Spatula (metal)",
+     "strike_point": 1,
+     "mic_ring": 2,
+     "mic_angle_deg": 120,
+     "target_z": 2.049,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1582.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1582.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -3135,6 +3377,28 @@ window.RETRIEVAL = {
    "text": "a long-ringing metal impact sound",
    "pool_size": 400,
    "relevant_in_pool": 78,
+   "anchors": {
+    "low": {
+     "clip_id": "92_MetalSpatula:row_1342",
+     "object_name": "Spatula (metal)",
+     "strike_point": 1,
+     "mic_ring": 2,
+     "mic_angle_deg": 40,
+     "target_z": -0.467,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1342.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1342.mp3"
+    },
+    "high": {
+     "clip_id": "92_MetalSpatula:row_1582",
+     "object_name": "Spatula (metal)",
+     "strike_point": 1,
+     "mic_ring": 2,
+     "mic_angle_deg": 120,
+     "target_z": 2.049,
+     "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1582.flac",
+     "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1582.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -3416,6 +3680,28 @@ window.RETRIEVAL = {
    "text": "a dull plastic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 53,
+   "anchors": {
+    "low": {
+     "clip_id": "73_PlasticBin:row_847",
+     "object_name": "Bin (plastic)",
+     "strike_point": 1,
+     "mic_ring": 1,
+     "mic_angle_deg": 80,
+     "target_z": -3.924,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_847.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_847.mp3"
+    },
+    "high": {
+     "clip_id": "73_PlasticBin:row_2422",
+     "object_name": "Bin (plastic)",
+     "strike_point": 2,
+     "mic_ring": 2,
+     "mic_angle_deg": 0,
+     "target_z": 2.199,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_2422.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_2422.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -3697,6 +3983,28 @@ window.RETRIEVAL = {
    "text": "a bright plastic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 47,
+   "anchors": {
+    "low": {
+     "clip_id": "73_PlasticBin:row_847",
+     "object_name": "Bin (plastic)",
+     "strike_point": 1,
+     "mic_ring": 1,
+     "mic_angle_deg": 80,
+     "target_z": -3.924,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_847.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_847.mp3"
+    },
+    "high": {
+     "clip_id": "73_PlasticBin:row_2422",
+     "object_name": "Bin (plastic)",
+     "strike_point": 2,
+     "mic_ring": 2,
+     "mic_angle_deg": 0,
+     "target_z": 2.199,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_2422.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_2422.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -3978,6 +4286,28 @@ window.RETRIEVAL = {
    "text": "a soft plastic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 59,
+   "anchors": {
+    "low": {
+     "clip_id": "73_PlasticBin:row_2197",
+     "object_name": "Bin (plastic)",
+     "strike_point": 3,
+     "mic_ring": 3,
+     "mic_angle_deg": 120,
+     "target_z": -0.812,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_2197.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_2197.mp3"
+    },
+    "high": {
+     "clip_id": "73_PlasticBin:row_1327",
+     "object_name": "Bin (plastic)",
+     "strike_point": 4,
+     "mic_ring": 1,
+     "mic_angle_deg": 40,
+     "target_z": 7.105,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_1327.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1327.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -4259,6 +4589,28 @@ window.RETRIEVAL = {
    "text": "a sharp plastic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 41,
+   "anchors": {
+    "low": {
+     "clip_id": "73_PlasticBin:row_2197",
+     "object_name": "Bin (plastic)",
+     "strike_point": 3,
+     "mic_ring": 3,
+     "mic_angle_deg": 120,
+     "target_z": -0.812,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_2197.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_2197.mp3"
+    },
+    "high": {
+     "clip_id": "73_PlasticBin:row_1327",
+     "object_name": "Bin (plastic)",
+     "strike_point": 4,
+     "mic_ring": 1,
+     "mic_angle_deg": 40,
+     "target_z": 7.105,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_1327.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1327.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -4540,6 +4892,28 @@ window.RETRIEVAL = {
    "text": "a short-dry plastic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 19,
+   "anchors": {
+    "low": {
+     "clip_id": "73_PlasticBin:row_2002",
+     "object_name": "Bin (plastic)",
+     "strike_point": 3,
+     "mic_ring": 2,
+     "mic_angle_deg": 60,
+     "target_z": -1.729,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_2002.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_2002.mp3"
+    },
+    "high": {
+     "clip_id": "73_PlasticBin:row_2422",
+     "object_name": "Bin (plastic)",
+     "strike_point": 2,
+     "mic_ring": 2,
+     "mic_angle_deg": 0,
+     "target_z": 14.098,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_2422.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_2422.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -4821,6 +5195,28 @@ window.RETRIEVAL = {
    "text": "a long-ringing plastic impact sound",
    "pool_size": 400,
    "relevant_in_pool": 81,
+   "anchors": {
+    "low": {
+     "clip_id": "73_PlasticBin:row_2002",
+     "object_name": "Bin (plastic)",
+     "strike_point": 3,
+     "mic_ring": 2,
+     "mic_angle_deg": 60,
+     "target_z": -1.729,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_2002.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_2002.mp3"
+    },
+    "high": {
+     "clip_id": "73_PlasticBin:row_2422",
+     "object_name": "Bin (plastic)",
+     "strike_point": 2,
+     "mic_ring": 2,
+     "mic_angle_deg": 0,
+     "target_z": 14.098,
+     "audio_path": "audio/test/original/reference/73_PlasticBin__row_2422.flac",
+     "audio_url": "assets/audio/retrieval/73_PlasticBin__row_2422.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -5102,6 +5498,28 @@ window.RETRIEVAL = {
    "text": "a dull wood impact sound",
    "pool_size": 400,
    "relevant_in_pool": 31,
+   "anchors": {
+    "low": {
+     "clip_id": "83_WoodVase:row_2047",
+     "object_name": "Vase (wood)",
+     "strike_point": 1,
+     "mic_ring": 1,
+     "mic_angle_deg": 80,
+     "target_z": -0.804,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_2047.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_2047.mp3"
+    },
+    "high": {
+     "clip_id": "83_WoodVase:row_2422",
+     "object_name": "Vase (wood)",
+     "strike_point": 4,
+     "mic_ring": 2,
+     "mic_angle_deg": 0,
+     "target_z": 1.075,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_2422.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_2422.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -5383,6 +5801,28 @@ window.RETRIEVAL = {
    "text": "a bright wood impact sound",
    "pool_size": 400,
    "relevant_in_pool": 69,
+   "anchors": {
+    "low": {
+     "clip_id": "83_WoodVase:row_2047",
+     "object_name": "Vase (wood)",
+     "strike_point": 1,
+     "mic_ring": 1,
+     "mic_angle_deg": 80,
+     "target_z": -0.804,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_2047.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_2047.mp3"
+    },
+    "high": {
+     "clip_id": "83_WoodVase:row_2422",
+     "object_name": "Vase (wood)",
+     "strike_point": 4,
+     "mic_ring": 2,
+     "mic_angle_deg": 0,
+     "target_z": 1.075,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_2422.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_2422.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -5664,6 +6104,28 @@ window.RETRIEVAL = {
    "text": "a soft wood impact sound",
    "pool_size": 400,
    "relevant_in_pool": 66,
+   "anchors": {
+    "low": {
+     "clip_id": "83_WoodVase:row_2932",
+     "object_name": "Vase (wood)",
+     "strike_point": 4,
+     "mic_ring": 4,
+     "mic_angle_deg": 160,
+     "target_z": -0.803,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_2932.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_2932.mp3"
+    },
+    "high": {
+     "clip_id": "83_WoodVase:row_1147",
+     "object_name": "Vase (wood)",
+     "strike_point": 5,
+     "mic_ring": 1,
+     "mic_angle_deg": 180,
+     "target_z": 3.455,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_1147.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_1147.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -5945,6 +6407,28 @@ window.RETRIEVAL = {
    "text": "a sharp wood impact sound",
    "pool_size": 400,
    "relevant_in_pool": 34,
+   "anchors": {
+    "low": {
+     "clip_id": "83_WoodVase:row_2932",
+     "object_name": "Vase (wood)",
+     "strike_point": 4,
+     "mic_ring": 4,
+     "mic_angle_deg": 160,
+     "target_z": -0.803,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_2932.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_2932.mp3"
+    },
+    "high": {
+     "clip_id": "83_WoodVase:row_1147",
+     "object_name": "Vase (wood)",
+     "strike_point": 5,
+     "mic_ring": 1,
+     "mic_angle_deg": 180,
+     "target_z": 3.455,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_1147.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_1147.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -6226,6 +6710,28 @@ window.RETRIEVAL = {
    "text": "a short-dry wood impact sound",
    "pool_size": 400,
    "relevant_in_pool": 86,
+   "anchors": {
+    "low": {
+     "clip_id": "83_WoodVase:row_2647",
+     "object_name": "Vase (wood)",
+     "strike_point": 4,
+     "mic_ring": 1,
+     "mic_angle_deg": 80,
+     "target_z": -1.17,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_2647.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_2647.mp3"
+    },
+    "high": {
+     "clip_id": "83_WoodVase:row_2032",
+     "object_name": "Vase (wood)",
+     "strike_point": 1,
+     "mic_ring": 4,
+     "mic_angle_deg": 60,
+     "target_z": 2.771,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_2032.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_2032.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -6507,6 +7013,28 @@ window.RETRIEVAL = {
    "text": "a long-ringing wood impact sound",
    "pool_size": 400,
    "relevant_in_pool": 13,
+   "anchors": {
+    "low": {
+     "clip_id": "83_WoodVase:row_2647",
+     "object_name": "Vase (wood)",
+     "strike_point": 4,
+     "mic_ring": 1,
+     "mic_angle_deg": 80,
+     "target_z": -1.17,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_2647.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_2647.mp3"
+    },
+    "high": {
+     "clip_id": "83_WoodVase:row_2032",
+     "object_name": "Vase (wood)",
+     "strike_point": 1,
+     "mic_ring": 4,
+     "mic_angle_deg": 60,
+     "target_z": 2.771,
+     "audio_path": "audio/test/original/reference/83_WoodVase__row_2032.flac",
+     "audio_url": "assets/audio/retrieval/83_WoodVase__row_2032.mp3"
+    }
+   },
    "models": {
     "clap": {
      "results": [
@@ -6781,18 +7309,28 @@ window.RETRIEVAL = {
  ],
  "needed_audio": [
   "audio/test/original/reference/64_CeramicMug__row_1042.flac",
+  "audio/test/original/reference/64_CeramicMug__row_1252.flac",
+  "audio/test/original/reference/64_CeramicMug__row_1987.flac",
+  "audio/test/original/reference/64_CeramicMug__row_2152.flac",
   "audio/test/original/reference/64_CeramicMug__row_2452.flac",
+  "audio/test/original/reference/64_CeramicMug__row_2572.flac",
+  "audio/test/original/reference/64_CeramicMug__row_2737.flac",
   "audio/test/original/reference/64_CeramicMug__row_2752.flac",
   "audio/test/original/reference/64_CeramicMug__row_502.flac",
   "audio/test/original/reference/73_PlasticBin__row_1072.flac",
   "audio/test/original/reference/73_PlasticBin__row_1132.flac",
   "audio/test/original/reference/73_PlasticBin__row_1252.flac",
   "audio/test/original/reference/73_PlasticBin__row_1312.flac",
+  "audio/test/original/reference/73_PlasticBin__row_1327.flac",
   "audio/test/original/reference/73_PlasticBin__row_1792.flac",
   "audio/test/original/reference/73_PlasticBin__row_1882.flac",
   "audio/test/original/reference/73_PlasticBin__row_1957.flac",
+  "audio/test/original/reference/73_PlasticBin__row_2002.flac",
+  "audio/test/original/reference/73_PlasticBin__row_2197.flac",
+  "audio/test/original/reference/73_PlasticBin__row_2422.flac",
   "audio/test/original/reference/73_PlasticBin__row_2632.flac",
   "audio/test/original/reference/73_PlasticBin__row_52.flac",
+  "audio/test/original/reference/73_PlasticBin__row_847.flac",
   "audio/test/original/reference/73_PlasticBin__row_877.flac",
   "audio/test/original/reference/73_PlasticBin__row_892.flac",
   "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1057.flac",
@@ -6820,17 +7358,23 @@ window.RETRIEVAL = {
   "audio/test/original/reference/75_FlowerpotSmallCeramic__row_787.flac",
   "audio/test/original/reference/75_FlowerpotSmallCeramic__row_892.flac",
   "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+  "audio/test/original/reference/83_WoodVase__row_1147.flac",
   "audio/test/original/reference/83_WoodVase__row_1417.flac",
   "audio/test/original/reference/83_WoodVase__row_142.flac",
   "audio/test/original/reference/83_WoodVase__row_1447.flac",
   "audio/test/original/reference/83_WoodVase__row_157.flac",
   "audio/test/original/reference/83_WoodVase__row_1687.flac",
   "audio/test/original/reference/83_WoodVase__row_172.flac",
+  "audio/test/original/reference/83_WoodVase__row_2032.flac",
+  "audio/test/original/reference/83_WoodVase__row_2047.flac",
   "audio/test/original/reference/83_WoodVase__row_2227.flac",
+  "audio/test/original/reference/83_WoodVase__row_2422.flac",
+  "audio/test/original/reference/83_WoodVase__row_2647.flac",
   "audio/test/original/reference/83_WoodVase__row_2662.flac",
   "audio/test/original/reference/83_WoodVase__row_2707.flac",
   "audio/test/original/reference/83_WoodVase__row_2782.flac",
   "audio/test/original/reference/83_WoodVase__row_292.flac",
+  "audio/test/original/reference/83_WoodVase__row_2932.flac",
   "audio/test/original/reference/83_WoodVase__row_502.flac",
   "audio/test/original/reference/83_WoodVase__row_517.flac",
   "audio/test/original/reference/83_WoodVase__row_562.flac",
@@ -6847,6 +7391,7 @@ window.RETRIEVAL = {
   "audio/test/original/reference/92_MetalSpatula__row_1387.flac",
   "audio/test/original/reference/92_MetalSpatula__row_1417.flac",
   "audio/test/original/reference/92_MetalSpatula__row_142.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1432.flac",
   "audio/test/original/reference/92_MetalSpatula__row_1447.flac",
   "audio/test/original/reference/92_MetalSpatula__row_1492.flac",
   "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
@@ -6857,6 +7402,7 @@ window.RETRIEVAL = {
   "audio/test/original/reference/92_MetalSpatula__row_1702.flac",
   "audio/test/original/reference/92_MetalSpatula__row_1792.flac",
   "audio/test/original/reference/92_MetalSpatula__row_2227.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2272.flac",
   "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
   "audio/test/original/reference/92_MetalSpatula__row_232.flac",
   "audio/test/original/reference/92_MetalSpatula__row_2347.flac",

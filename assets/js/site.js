@@ -147,8 +147,10 @@
         }
       }
       var summary = document.getElementById("query-summary");
+      var anchorMount = document.getElementById("anchors");
       mount.innerHTML = "";
       summary.innerHTML = "";
+      anchorMount.innerHTML = "";
       if (!query) {
         summary.appendChild(el("div", "meta", "No query for that combination."));
         return;
@@ -166,12 +168,52 @@
         (delta > 0 ? "+" : "") + delta.toFixed(3) + " nDCG@10"
       );
       summary.appendChild(badge);
+      renderAnchors(anchorMount, query);
       var clap = query.models.clap;
       var resi = query.models.resiclap;
       mount.appendChild(panel("Frozen CLAP", clap,
                               clap.ndcg_at_10 > resi.ndcg_at_10));
       mount.appendChild(panel("ResiCLAP", resi,
                               resi.ndcg_at_10 >= clap.ndcg_at_10));
+    }
+
+    function renderAnchors(mountNode, query) {
+      if (!query.anchors) return;
+      var box = el("div", "anchorbox");
+      box.appendChild(
+        el("h3", null,
+           "Calibrate your ears: " + query.factor_label + " extremes in " +
+           query.material)
+      );
+      box.appendChild(
+        el("p", "hint",
+           "Impacts of one material differ only subtly, which is the whole " +
+           "difficulty. These two clips are the lowest and highest " +
+           query.factor_label.toLowerCase() +
+           " recordings of " + query.material +
+           " in the pool. Play them back to back first — the rankings " +
+           "below are asking for exactly this distinction.")
+      );
+      var row = el("div", "anchorrow");
+      [["Lowest", query.anchors.low], ["Highest", query.anchors.high]]
+        .forEach(function (pair) {
+          var item = el("div", "anchor");
+          item.appendChild(playButton(pair[1].audio_url));
+          var info = el("div", "info");
+          info.appendChild(
+            el("div", "name",
+               pair[0] + " " + query.factor_label.toLowerCase())
+          );
+          info.appendChild(
+            el("div", "sub",
+               pair[1].object_name + " · strike " + pair[1].strike_point +
+               " · z=" + pair[1].target_z.toFixed(2))
+          );
+          item.appendChild(info);
+          row.appendChild(item);
+        });
+      box.appendChild(row);
+      mountNode.appendChild(box);
     }
 
     function clapNdcg(q) { return q.models.clap.ndcg_at_10; }

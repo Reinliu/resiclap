@@ -34,6 +34,14 @@
   distance rings and a range of angles, both shown beneath each name. Two recordings of the same object
   can therefore sound quite different, which is exactly the distinction these
   queries are asking the model to make.</p>
+  <p>Be warned that the differences are <em>meant</em> to be subtle. Every clip
+  in a given comparison is the same kind of event &mdash; a ceramic object being
+  struck &mdash; and only the brightness, attack or decay varies. That is
+  precisely why the task is hard for a general audio&ndash;language model, and
+  why we measure the property <em>relative to its own material</em> rather than
+  in absolute terms. Each query below therefore begins with two calibration
+  clips that bracket the property, so you can hear the axis before judging a
+  ranking. Headphones help considerably.</p>
 </section>
 
 <section>
@@ -58,6 +66,7 @@
   </div>
 
   <div id="query-summary" class="qsummary"></div>
+  <div id="anchors" class="anchors"></div>
   <div id="results" class="compare"></div>
 
   <p class="tnote">A result counts as relevant when it matches the queried

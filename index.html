@@ -110,8 +110,8 @@
 </section>
 
 <figure class="fig wide">
-  <img src="assets/img/architecture.png" alt="Overview of ResiCLAP. The pretrained CLAP encoders remain frozen. An attribute residual branch recovers fine-g" loading="lazy">
-  <figcaption>Overview of ResiCLAP. The pretrained CLAP encoders remain frozen. An attribute residual branch recovers fine-grained evidence from intermediate CLAP representations, while a multi-scale temporal relation branch captures higher-resolution temporal structure. Both residuals are projected orthogonally to the frozen embedding <em>z</em><sub>0</sub>, independently bounded, and added back to produce a single enhanced embedding for standard cosine retrieval.</figcaption>
+  <img src="assets/img/architecture.png" alt="Overview of ResiCLAP. Blue blocks are frozen, orange blocks are trained, purple blocks are embeddings. Both CL" loading="lazy">
+  <figcaption>Overview of ResiCLAP. Blue blocks are frozen, orange blocks are trained, purple blocks are embeddings. Both CLAP encoders stay frozen. An attribute residual branch reads patch and late-stage hidden states to recover brightness, attack and decay evidence, while a multi-scale temporal relation branch reads high-resolution features at four offsets. Each residual is projected orthogonally to the frozen embedding <em>z</em><sub>0</sub> and clipped in norm, then both are added back and re-normalised into a single enhanced embedding <em>z</em><sup>&#9733;</sup> that is matched against the unmodified CLAP text embedding by ordinary cosine retrieval.</figcaption>
 </figure>
 
 <section>
