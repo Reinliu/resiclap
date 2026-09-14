@@ -103,6 +103,131 @@
   and FSD50K, which the model never trains on as a retrieval target.</p>
 </section>
 
+<section id="curation">
+  <h2>Dataset curation</h2>
+  <p class="lede">Fine-grained supervision needs pairs that differ in
+  <em>one</em> attribute and nothing else. RealImpact supplies the recordings;
+  the curation pipeline supplies the contrast.</p>
+
+  <h3>1. From recordings to factor measurements</h3>
+  <p>Objects are grouped into materials by name, and every clip is analysed at
+  48&nbsp;kHz after onset detection (first point where a 5&nbsp;ms moving-average
+  envelope reaches 10% of its peak). Three scalar factors are measured:</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Factor</th><th>Measured quantity</th><th>Target value</th></tr></thead>
+      <tbody>
+        <tr><td>Brightness</td><td>Spectral centroid of the Hann-windowed active
+          region (up to 1&nbsp;s after onset)</td>
+          <td><code>log10(centroid + 1)</code></td></tr>
+        <tr><td>Attack</td><td>Rise time from onset to 90% of the local envelope
+          peak, within a 100&nbsp;ms window</td>
+          <td><code>-log10(t<sub>90</sub> + 1/f<sub>s</sub>)</code></td></tr>
+        <tr><td>Decay</td><td>T20 from the backward energy-decay curve, noise
+          floor subtracted</td>
+          <td><code>log10(T20 + 1e-4)</code></td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">Higher target means brighter, sharper, or longer-ringing
+    respectively. Clips whose decay curve never crosses &minus;20&nbsp;dB before
+    the recording ends are marked censored and excluded from decay supervision.</p>
+  </div>
+
+  <h3>2. Category-relative targets</h3>
+  <p>A ceramic bowl is brighter than a wooden block in absolute terms even when
+  it is the dullest ceramic in the set, so absolute thresholds would simply
+  re-encode material identity. Each factor is therefore standardised
+  <strong>within its material</strong>, using statistics computed on the training
+  split only. A clip below the 45th percentile of its material's training
+  distribution is labelled <em>low</em>, above the 55th <em>high</em>, and
+  otherwise <em>middle</em>. Splits are assigned at the <strong>object</strong>
+  level with a deterministic seeded hash, stratified by material, so no object
+  and no normalisation statistic ever crosses from training into test.</p>
+
+  <h3>3. Controlled DSP variants</h3>
+  <p>Natural recordings alone rarely give two clips of the same object differing
+  in exactly one attribute. Each reference clip is therefore processed into
+  candidate variants pushed toward the low and high end of its own category.
+  Every candidate is RMS-matched back to the reference and peak-limited at 0.98,
+  so loudness can never be the cue that separates them.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Variant</th><th>Transform</th><th>Parameter sweep</th></tr></thead>
+      <tbody>
+        <tr><td>Brighter / duller</td>
+          <td>Second-order high-shelf biquad, cutoff 2&nbsp;kHz</td>
+          <td><code>&plusmn;3, &plusmn;6, &plusmn;9, &plusmn;12 dB</code></td></tr>
+        <tr><td>Sharper attack</td>
+          <td>Time-warp of the attack segment, <code>t &rarr; t<sup>w</sup></code>
+          </td><td><code>w = 0.5, 0.25, 0.125, 0.0625</code></td></tr>
+        <tr><td>Sharper attack</td>
+          <td>Transient boost <code>1 + s&middot;exp(&minus;t/2ms)</code> over the
+          first 40&nbsp;ms</td><td><code>s = 1, 2, 4</code></td></tr>
+        <tr><td>Softer attack</td>
+          <td>Time-warp of the attack segment</td>
+          <td><code>w = 1.5, 2, 2.5, 3.5, 5</code></td></tr>
+        <tr><td>Softer attack</td>
+          <td><code>sin&sup2;</code> onset ramp</td>
+          <td><code>5, 10, 20 ms</code></td></tr>
+      </tbody>
+    </table>
+    <p class="tnote">The sweep is not a fixed setting applied blindly &mdash; all
+    candidates are generated, measured, and then filtered by the gates below.</p>
+  </div>
+
+  <h3>4. Acceptance gates</h3>
+  <p>A candidate is kept only if it clears every gate. The strength that survives
+  therefore varies per clip, which is the point: a dull ceramic needs a different
+  push than an already-bright one.</p>
+  <div class="pipeline">
+    <div class="stage"><span>1</span><h3>Headroom</h3>
+      <p>The original must have room to move &mdash; below the category's 90th
+      percentile to brighten, above the 10th to dull.</p></div>
+    <div class="stage"><span>2</span><h3>Direction</h3>
+      <p>The <em>re-measured</em> factor must actually move the intended way.
+      Intent is never assumed from the parameter.</p></div>
+    <div class="stage"><span>3</span><h3>Plausibility</h3>
+      <p>The result must land inside the 1st&ndash;99th percentile of real clips
+      of that material and object type.</p></div>
+    <div class="stage"><span>4</span><h3>Leakage</h3>
+      <p>The other two factors must barely move &mdash; the constraint that makes
+      the pair single-attribute.</p></div>
+  </div>
+  <p>Leakage tolerances are asymmetric, because brightening is more likely to
+  disturb a measured attack than the reverse:</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Variant type</th><th>Max &Delta;brightness</th>
+        <th>Max &Delta;attack</th><th>Max &Delta;decay</th></tr></thead>
+      <tbody>
+        <tr><td>Brightness variants</td><td>&mdash;</td><td>0.15</td><td>0.15</td></tr>
+        <tr><td>Attack variants</td><td>0.10</td><td>&mdash;</td><td>0.15</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Among surviving candidates, the one closest to the category's 25th (low) or
+  75th (high) percentile wins, scored as
+  <code>|measured &minus; target| / (q95 &minus; q05) + 0.1 &times; leakage</code>.
+  Finally, each accepted variant must keep a <strong>frozen-CLAP cosine of at
+  least 0.85</strong> to its original, so no variant drifts far enough to change
+  what the clip is a recording <em>of</em>.</p>
+
+  <h3>5. Why decay has no synthetic variants</h3>
+  <div class="callout warn">
+    <p>Decay is supervised <strong>only by natural recordings</strong>. Synthetic
+    decay variants were generated in an earlier pass &mdash; exponential
+    rescaling of the tail with a fade &mdash; and then discarded, because
+    lengthening or truncating a ring changes how bright and how sharp the clip
+    measures as well, and the processed audio failed the semantic-preservation
+    check. Rather than train on supervision we could not keep clean, decay pairs
+    are drawn from natural RealImpact groups whose ring time already differs
+    under controlled geometry.</p>
+  </div>
+  <p>This is a deliberate asymmetry rather than an oversight, and it is worth
+  stating plainly: brightness and attack benefit from controlled augmentation,
+  decay does not.</p>
+</section>
+
 <section id="method">
   <h2>Method</h2>
   <p class="lede">ResiCLAP treats the frozen CLAP embedding as a fixed semantic
