@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method &amp;middot; ResiCLAP: Semantic-Preserving Residual Enhancement for Fine-Grained Impact Sound Retrieval</title>
+<meta name="description" content="Project page for ResiCLAP: Semantic-Preserving Residual Enhancement for Fine-Grained Impact Sound Retrieval">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Resi<span>CLAP</span></a>
+    <nav><a href="index.html">Overview</a><a href="method.html" class="active">Method</a><a href="dataset.html">Dataset</a><a href="results.html">Results</a><a href="demo.html">Retrieval demo</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section>
+  <h1>Method</h1>
+  <p class="lede">ResiCLAP treats the frozen CLAP embedding as a fixed semantic
+  anchor and learns only bounded corrections around it.</p>
+</section>
+
+<figure class="fig wide">
+  <img src="assets/img/architecture.png" alt="Overview of ResiCLAP. The pretrained CLAP encoders remain frozen. An attribute residual branch recovers fine-g" loading="lazy">
+  <figcaption>Overview of ResiCLAP. The pretrained CLAP encoders remain frozen. An attribute residual branch recovers fine-grained evidence from intermediate CLAP representations, while a multi-scale temporal relation branch captures higher-resolution temporal structure. Both residuals are projected orthogonally to the frozen embedding <em>z</em><sub>0</sub>, independently bounded, and added back to produce a single enhanced embedding for standard cosine retrieval.</figcaption>
+</figure>
+
+<section>
+  <h2>1. Attribute residual branch</h2>
+  <p>Probing the frozen HTSAT encoder shows that intermediate layers expose
+  fine-grained attributes more strongly than the final global embedding. We read
+  three of them directly:</p>
+  <div class="tablewrap"><table><thead><tr><th>Attribute</th><th>Source representation</th><th>Dimension</th></tr></thead><tbody><tr><td>Brightness</td><td>patch spectral-band features</td><td>384</td></tr><tr><td>Attack</td><td>patch onset features</td><td>96</td></tr><tr><td>Decay</td><td>stage-3 tail features</td><td>768</td></tr></tbody></table></div>
+  <p>Each is projected to 512-d by a two-layer MLP (hidden width 128, LayerNorm,
+  GELU) and the three projections are merged by a learned sigmoid gated fusion.
+  Every gate is initialised to &minus;2, so each branch starts with a small
+  contribution and has to earn its influence during training.</p>
+</section>
+
+<section>
+  <h2>2. Multi-scale temporal residual branch</h2>
+  <p>CLAP's own frame stride is too coarse for transient detail, so this branch
+  reads the waveform at higher resolution. From a 1.5&nbsp;s window beginning
+  100&nbsp;ms before onset we extract 5&nbsp;ms log-mel frames plus envelope,
+  spectral-flux and relative-time features, standardise them, downsample to
+  20&nbsp;ms steps and project to 64-d states.</p>
+  <p>Temporal evolution is then modelled explicitly as <em>relations between
+  time steps</em> at four offsets &mdash; 20, 40, 80 and 160&nbsp;ms &mdash; so
+  the branch sees both short transients and longer evolution. Attribute-specific
+  attention summarises each scale, and a second attribute-specific weighting
+  combines the four scales.</p>
+  <figure class="fig ">
+  <img src="assets/img/temporal_branch.png" alt="The multi-scale temporal relation branch. Relation sequences are formed over four temporal offsets, summarised" loading="lazy">
+  <figcaption>The multi-scale temporal relation branch. Relation sequences are formed over four temporal offsets, summarised by attribute-specific within-scale attention, then combined by attribute-specific cross-scale weighting before being mapped into the CLAP space.</figcaption>
+</figure>
+</section>
+
+<section>
+  <h2>3. Bounded residual adaptation</h2>
+  <p>This is the part that keeps CLAP intact. Each residual is first projected
+  orthogonally to the frozen embedding, then clipped to a fixed radius:</p>
+  <div class="eq">
+    r&#773;<sub>b</sub> = ClipNorm( r<sub>b</sub> &minus;
+    &lang;r<sub>b</sub>, z<sub>0</sub>&rang; z<sub>0</sub> ;
+    &rho;<sub>b</sub> ),
+    &nbsp;&nbsp; b &isin; {a, t}
+  </div>
+  <p>with &rho;<sub>a</sub> = 0.20 for the attribute residual and
+  &rho;<sub>t</sub> = 0.05 for the temporal residual. The bounded residuals are
+  added to the anchor and re-normalised:</p>
+  <div class="eq">
+    z<sup>&#9733;</sup> = ( z<sub>0</sub> + r&#773;<sub>a</sub> +
+    r&#773;<sub>t</sub> ) / &#8214; z<sub>0</sub> + r&#773;<sub>a</sub> +
+    r&#773;<sub>t</sub> &#8214;<sub>2</sub>
+  </div>
+  <p class="callout">Because the residuals are orthogonal to
+  <em>z</em><sub>0</sub> and bounded, the enhanced embedding is a rotation of the
+  original by at most about 14&deg;. Our ablation shows it is the
+  <em>magnitude bound</em>, not the orthogonal projection, that does the work of
+  preserving semantic structure &mdash; see
+  <a href="results.html#tradeoff">the trade-off analysis</a>.</p>
+</section>
+
+<section>
+  <h2>4. Training objective</h2>
+  <p>The bound controls how far the embedding may move; the objective decides
+  what the movement should encode. Two groups of terms are combined:</p>
+  <div class="cols">
+    <div>
+      <h3>Fine-grained learning</h3>
+      <ul>
+        <li><strong>Prompt classification</strong> aligns the enhanced embedding
+        with its material&ndash;attribute description.</li>
+        <li><strong>Smooth-L1 regression</strong> predicts the category-relative
+        attribute value.</li>
+        <li><strong>Pairwise ranking</strong> preserves the relative ordering
+        between sounds.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Semantic preservation</h3>
+      <ul>
+        <li><strong>Cosine anchor</strong> penalises deviation from
+        <em>z</em><sub>0</sub>.</li>
+        <li><strong>Semantic contrastive</strong> keeps audio&ndash;text
+        alignment on general audio.</li>
+        <li><strong>Symmetric-KL distillation</strong> matches the frozen and
+        enhanced audio&ndash;text similarity distributions.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Training setup</h2>
+  <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>Backbone</td><td>LAION-CLAP <code>clap-htsat-fused</code> (frozen)</td></tr><tr><td>Trained parameters</td><td>residual branches and gates only</td></tr><tr><td>Optimiser</td><td>AdamW, lr 1e&minus;4, weight decay 1e&minus;4</td></tr><tr><td>Gradient clipping</td><td>global norm 5.0</td></tr><tr><td>Epochs</td><td>100</td></tr><tr><td>Alignment temperature</td><td>0.07</td></tr><tr><td>Attribute bound &rho;<sub>a</sub></td><td>0.20</td></tr><tr><td>Temporal bound &rho;<sub>t</sub></td><td>0.05</td></tr><tr><td>Seeds</td><td>7, 17, 27</td></tr></tbody></table></div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p>Project page for an anonymous submission under review. Audio examples are
+    derived from the RealImpact dataset (MIT license) and are redistributed here
+    for research demonstration.</p>
+  </div>
+</footer>
+<script src="assets/js/data-retrieval.js"></script>
+<script src="assets/js/data-curation.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,5316 @@
+window.RETRIEVAL = {
+ "pool_size": 400,
+ "top_k": 8,
+ "resiclap_seed": 7,
+ "residual_budget": 0.2,
+ "temporal_residual_budget": 0.05,
+ "queries": [
+  {
+   "query_id": "ceramic:brightness:low",
+   "material": "ceramic",
+   "factor": "brightness",
+   "factor_label": "Brightness",
+   "direction": "low",
+   "direction_label": "dull",
+   "text": "a dull ceramic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 26,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1846,
+       "relevant": false,
+       "target_z": 0.335,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_952",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1803,
+       "relevant": false,
+       "target_z": 1.203,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_952.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1477",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1663,
+       "relevant": true,
+       "target_z": -0.323,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1477.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1477.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1672",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1573,
+       "relevant": false,
+       "target_z": 0.268,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1672.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1672.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1533,
+       "relevant": false,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1567",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1512,
+       "relevant": false,
+       "target_z": 0.489,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1567.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1057",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1504,
+       "relevant": false,
+       "target_z": 1.136,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1057.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "75_FlowerpotSmallCeramic:row_2197",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1485,
+       "relevant": false,
+       "target_z": 1.237,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_2197.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_2197.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.1763
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1477",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2357,
+       "relevant": true,
+       "target_z": -0.323,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1477.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1477.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1672",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2312,
+       "relevant": false,
+       "target_z": 0.268,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1672.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1672.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_712",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2231,
+       "relevant": false,
+       "target_z": 1.107,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_712.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_712.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1642",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2155,
+       "relevant": false,
+       "target_z": 0.093,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1642.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1642.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2146,
+       "relevant": false,
+       "target_z": 0.335,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1057",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2106,
+       "relevant": false,
+       "target_z": 1.136,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1057.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_2602",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2096,
+       "relevant": false,
+       "target_z": 0.145,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_2602.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_2602.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "75_FlowerpotSmallCeramic:row_652",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2001,
+       "relevant": false,
+       "target_z": 1.24,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_652.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_652.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.2863
+    }
+   }
+  },
+  {
+   "query_id": "ceramic:brightness:high",
+   "material": "ceramic",
+   "factor": "brightness",
+   "factor_label": "Brightness",
+   "direction": "high",
+   "direction_label": "bright",
+   "text": "a bright ceramic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 74,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3331,
+       "relevant": false,
+       "target_z": 0.52,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1447",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3272,
+       "relevant": false,
+       "target_z": 0.165,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1447.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1447.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3148,
+       "relevant": false,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_1702",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3113,
+       "relevant": false,
+       "target_z": -0.098,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1702.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1702.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_952",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.307,
+       "relevant": true,
+       "target_z": 1.203,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_952.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_2842",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3046,
+       "relevant": false,
+       "target_z": 0.009,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2842.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2842.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_2452",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3005,
+       "relevant": false,
+       "target_z": 0.22,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2452.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2722",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3,
+       "relevant": false,
+       "target_z": 0.015,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2722.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2722.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0851
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_952",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.3368,
+       "relevant": true,
+       "target_z": 1.203,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_952.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3268,
+       "relevant": false,
+       "target_z": 0.52,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1597",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.3231,
+       "relevant": true,
+       "target_z": 0.816,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1597.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1597.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "64_CeramicMug:row_2752",
+       "object_id": "64_CeramicMug",
+       "object_type": "mug",
+       "material": "ceramic",
+       "score": 0.3165,
+       "relevant": true,
+       "target_z": 1.165,
+       "audio_path": "audio/test/original/reference/64_CeramicMug__row_2752.flac",
+       "audio_url": "assets/audio/retrieval/64_CeramicMug__row_2752.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_712",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.303,
+       "relevant": true,
+       "target_z": 1.107,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_712.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_712.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.301,
+       "relevant": true,
+       "target_z": 0.335,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_892",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2996,
+       "relevant": true,
+       "target_z": 1.114,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_892.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_892.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2991,
+       "relevant": false,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.7917
+    }
+   }
+  },
+  {
+   "query_id": "ceramic:attack:low",
+   "material": "ceramic",
+   "factor": "attack",
+   "factor_label": "Attack",
+   "direction": "low",
+   "direction_label": "soft",
+   "text": "a soft ceramic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 77,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1952,
+       "relevant": true,
+       "target_z": -0.206,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1567",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1772,
+       "relevant": false,
+       "target_z": 0.54,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1567.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1282",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1692,
+       "relevant": false,
+       "target_z": 0.032,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1282.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1282.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1822",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1659,
+       "relevant": true,
+       "target_z": -0.012,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1822.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1822.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_2497",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1651,
+       "relevant": false,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2497.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2497.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1477",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1642,
+       "relevant": true,
+       "target_z": -0.298,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1477.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1477.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_952",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1606,
+       "relevant": true,
+       "target_z": -0.336,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_952.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1582",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1573,
+       "relevant": true,
+       "target_z": -0.179,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1582.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1582.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.6659
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1642",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2281,
+       "relevant": true,
+       "target_z": -0.139,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1642.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1642.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2274,
+       "relevant": true,
+       "target_z": -0.206,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1477",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2267,
+       "relevant": true,
+       "target_z": -0.298,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1477.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1477.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1672",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2228,
+       "relevant": true,
+       "target_z": -0.336,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1672.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1672.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1597",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2102,
+       "relevant": true,
+       "target_z": -0.386,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1597.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1597.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1057",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2091,
+       "relevant": true,
+       "target_z": -0.399,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1057.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1537",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2062,
+       "relevant": true,
+       "target_z": -0.386,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1537.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1537.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "75_FlowerpotSmallCeramic:row_652",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2053,
+       "relevant": true,
+       "target_z": -0.423,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_652.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_652.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 1.0
+    }
+   }
+  },
+  {
+   "query_id": "ceramic:attack:high",
+   "material": "ceramic",
+   "factor": "attack",
+   "factor_label": "Attack",
+   "direction": "high",
+   "direction_label": "sharp",
+   "text": "a sharp ceramic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 23,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_952",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.3292,
+       "relevant": false,
+       "target_z": -0.336,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_952.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_712",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.306,
+       "relevant": false,
+       "target_z": -0.349,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_712.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_712.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3008,
+       "relevant": false,
+       "target_z": 1.096,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.3006,
+       "relevant": false,
+       "target_z": -0.206,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2982,
+       "relevant": false,
+       "target_z": 0.75,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "75_FlowerpotSmallCeramic:row_892",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2946,
+       "relevant": false,
+       "target_z": -0.495,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_892.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_892.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1057",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2935,
+       "relevant": false,
+       "target_z": -0.399,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1057.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1672",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2931,
+       "relevant": false,
+       "target_z": -0.336,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1672.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1672.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0636
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.3212,
+       "relevant": true,
+       "target_z": 1.023,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_2347",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.3173,
+       "relevant": true,
+       "target_z": 0.769,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_2347.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_2347.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_787",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.317,
+       "relevant": true,
+       "target_z": 0.468,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_787.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_787.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1147",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.313,
+       "relevant": true,
+       "target_z": 1.258,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1147.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1147.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_487",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.3108,
+       "relevant": true,
+       "target_z": 0.851,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_487.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_487.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1927",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.3098,
+       "relevant": true,
+       "target_z": 0.69,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1927.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1927.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_712",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.3078,
+       "relevant": false,
+       "target_z": -0.349,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_712.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_712.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "75_FlowerpotSmallCeramic:row_2107",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.302,
+       "relevant": true,
+       "target_z": 0.576,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_2107.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_2107.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.7968
+    }
+   }
+  },
+  {
+   "query_id": "ceramic:decay:low",
+   "material": "ceramic",
+   "factor": "decay",
+   "factor_label": "Decay",
+   "direction": "low",
+   "direction_label": "short dry",
+   "text": "a short-dry ceramic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 64,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2237,
+       "relevant": true,
+       "target_z": -0.591,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1672",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2035,
+       "relevant": true,
+       "target_z": -0.649,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1672.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1672.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1282",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1938,
+       "relevant": true,
+       "target_z": -0.51,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1282.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1282.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.192,
+       "relevant": true,
+       "target_z": -1.29,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1477",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1873,
+       "relevant": true,
+       "target_z": -0.411,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1477.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1477.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "64_CeramicMug:row_2452",
+       "object_id": "64_CeramicMug",
+       "object_type": "mug",
+       "material": "ceramic",
+       "score": 0.1819,
+       "relevant": true,
+       "target_z": -0.075,
+       "audio_path": "audio/test/original/reference/64_CeramicMug__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/64_CeramicMug__row_2452.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "64_CeramicMug:row_502",
+       "object_id": "64_CeramicMug",
+       "object_type": "mug",
+       "material": "ceramic",
+       "score": 0.1779,
+       "relevant": true,
+       "target_z": -0.092,
+       "audio_path": "audio/test/original/reference/64_CeramicMug__row_502.flac",
+       "audio_url": "assets/audio/retrieval/64_CeramicMug__row_502.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "64_CeramicMug:row_1042",
+       "object_id": "64_CeramicMug",
+       "object_type": "mug",
+       "material": "ceramic",
+       "score": 0.175,
+       "relevant": false,
+       "target_z": 0.53,
+       "audio_path": "audio/test/original/reference/64_CeramicMug__row_1042.flac",
+       "audio_url": "assets/audio/retrieval/64_CeramicMug__row_1042.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.8669
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2523,
+       "relevant": true,
+       "target_z": -1.29,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_787",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.242,
+       "relevant": true,
+       "target_z": -1.105,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_787.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_787.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1147",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2293,
+       "relevant": true,
+       "target_z": -1.19,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1147.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1147.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2281,
+       "relevant": true,
+       "target_z": -0.591,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_2107",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2065,
+       "relevant": true,
+       "target_z": -1.006,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_2107.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_2107.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1567",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.2021,
+       "relevant": true,
+       "target_z": -0.78,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1567.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_952",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1977,
+       "relevant": true,
+       "target_z": -0.826,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_952.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "83_WoodVase:row_757",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1957,
+       "relevant": false,
+       "target_z": -0.321,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_757.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_757.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.9306
+    }
+   }
+  },
+  {
+   "query_id": "ceramic:decay:high",
+   "material": "ceramic",
+   "factor": "decay",
+   "factor_label": "Decay",
+   "direction": "high",
+   "direction_label": "long ringing",
+   "text": "a long-ringing ceramic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 36,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_1537",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3044,
+       "relevant": false,
+       "target_z": 0.793,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1537.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1537.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "83_WoodVase:row_757",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.2869,
+       "relevant": false,
+       "target_z": -0.321,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_757.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_757.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1492",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2862,
+       "relevant": false,
+       "target_z": 0.535,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1492.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1492.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_1792",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2826,
+       "relevant": false,
+       "target_z": 0.411,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1792.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1792.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_2452",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2818,
+       "relevant": false,
+       "target_z": 0.709,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2452.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1612",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.278,
+       "relevant": false,
+       "target_z": -0.36,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1612.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1612.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "83_WoodVase:row_2782",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.2755,
+       "relevant": false,
+       "target_z": -0.314,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_2782.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_2782.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1417",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2678,
+       "relevant": false,
+       "target_z": 0.744,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1417.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1417.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_2557",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2835,
+       "relevant": false,
+       "target_z": 0.881,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2557.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2557.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1537",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.278,
+       "relevant": false,
+       "target_z": 0.793,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1537.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1537.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_2452",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2726,
+       "relevant": false,
+       "target_z": 0.709,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2452.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2722",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2701,
+       "relevant": false,
+       "target_z": 1.432,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2722.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2722.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_2992",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2684,
+       "relevant": false,
+       "target_z": 1.007,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2992.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2992.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_937",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2624,
+       "relevant": false,
+       "target_z": 0.782,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_937.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_937.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_1492",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2604,
+       "relevant": false,
+       "target_z": 0.535,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1492.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1492.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2842",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2591,
+       "relevant": false,
+       "target_z": 0.714,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2842.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2842.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    }
+   }
+  },
+  {
+   "query_id": "metal:brightness:low",
+   "material": "metal",
+   "factor": "brightness",
+   "factor_label": "Brightness",
+   "direction": "low",
+   "direction_label": "dull",
+   "text": "a dull metal impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 7,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1353,
+       "relevant": false,
+       "target_z": 0.154,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1197,
+       "relevant": false,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1194,
+       "relevant": false,
+       "target_z": 1.132,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_232",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1181,
+       "relevant": false,
+       "target_z": 1.067,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_232.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_232.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_352",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1165,
+       "relevant": false,
+       "target_z": 0.538,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_352.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_352.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "73_PlasticBin:row_52",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.1058,
+       "relevant": false,
+       "target_z": 0.863,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_52.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_52.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.101,
+       "relevant": false,
+       "target_z": 0.658,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1582",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1002,
+       "relevant": true,
+       "target_z": -0.065,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1582.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1582.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0867
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2132,
+       "relevant": false,
+       "target_z": 0.154,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_352",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2103,
+       "relevant": false,
+       "target_z": 0.538,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_352.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_352.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1992,
+       "relevant": false,
+       "target_z": 0.658,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.187,
+       "relevant": false,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1582",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1845,
+       "relevant": true,
+       "target_z": -0.065,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1582.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1582.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1012",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1791,
+       "relevant": false,
+       "target_z": 0.405,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1012.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1012.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_232",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1789,
+       "relevant": false,
+       "target_z": 1.067,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_232.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_232.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2452",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1776,
+       "relevant": false,
+       "target_z": 0.22,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2452.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.1063
+    }
+   }
+  },
+  {
+   "query_id": "metal:brightness:high",
+   "material": "metal",
+   "factor": "brightness",
+   "factor_label": "Brightness",
+   "direction": "high",
+   "direction_label": "bright",
+   "text": "a bright metal impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 93,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_1447",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2588,
+       "relevant": true,
+       "target_z": 0.165,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1447.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1447.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2494,
+       "relevant": true,
+       "target_z": 0.52,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1387",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2351,
+       "relevant": true,
+       "target_z": 0.21,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1387.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1387.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_1177",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2333,
+       "relevant": true,
+       "target_z": 0.609,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1177.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1177.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2306,
+       "relevant": true,
+       "target_z": 0.154,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2298,
+       "relevant": true,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2267,
+       "relevant": true,
+       "target_z": 1.132,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2842",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2248,
+       "relevant": true,
+       "target_z": 0.009,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2842.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2842.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.8701
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3112,
+       "relevant": true,
+       "target_z": 0.52,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1447",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2959,
+       "relevant": true,
+       "target_z": 0.165,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1447.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1447.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_727",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2921,
+       "relevant": true,
+       "target_z": 1.17,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_727.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_727.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_1267",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2881,
+       "relevant": true,
+       "target_z": 0.832,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1267.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1267.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_37",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2855,
+       "relevant": true,
+       "target_z": 1.063,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_37.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_37.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2853,
+       "relevant": true,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_487",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2851,
+       "relevant": true,
+       "target_z": 0.565,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_487.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_487.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_742",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.283,
+       "relevant": true,
+       "target_z": 0.417,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_742.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_742.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 1.0
+    }
+   }
+  },
+  {
+   "query_id": "metal:attack:low",
+   "material": "metal",
+   "factor": "attack",
+   "factor_label": "Attack",
+   "direction": "low",
+   "direction_label": "soft",
+   "text": "a soft metal impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 67,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1639,
+       "relevant": false,
+       "target_z": 0.113,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_232",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1406,
+       "relevant": true,
+       "target_z": -0.467,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_232.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_232.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_142",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1391,
+       "relevant": true,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_142.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_142.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1335,
+       "relevant": true,
+       "target_z": -0.385,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1321,
+       "relevant": false,
+       "target_z": 0.75,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_2497",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1261,
+       "relevant": true,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2497.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2497.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_2227",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1223,
+       "relevant": false,
+       "target_z": 0.416,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2227.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2227.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2347",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1214,
+       "relevant": false,
+       "target_z": 0.231,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2347.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2347.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.4221
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2135,
+       "relevant": true,
+       "target_z": -0.402,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2124,
+       "relevant": true,
+       "target_z": -0.385,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_2497",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2047,
+       "relevant": true,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2497.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2497.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_232",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2047,
+       "relevant": true,
+       "target_z": -0.467,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_232.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_232.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2044,
+       "relevant": false,
+       "target_z": 0.75,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2039,
+       "relevant": false,
+       "target_z": 0.113,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_517",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2,
+       "relevant": true,
+       "target_z": -0.233,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_517.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_517.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_352",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1997,
+       "relevant": true,
+       "target_z": -1.674,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_352.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_352.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.8365
+    }
+   }
+  },
+  {
+   "query_id": "metal:attack:high",
+   "material": "metal",
+   "factor": "attack",
+   "factor_label": "Attack",
+   "direction": "high",
+   "direction_label": "sharp",
+   "text": "a sharp metal impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 33,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_1447",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2635,
+       "relevant": true,
+       "target_z": 0.726,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1447.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1447.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1387",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2585,
+       "relevant": true,
+       "target_z": 0.59,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1387.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1387.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2583,
+       "relevant": true,
+       "target_z": 1.096,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2522,
+       "relevant": true,
+       "target_z": 0.113,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2517,
+       "relevant": true,
+       "target_z": 0.75,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_487",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2483,
+       "relevant": true,
+       "target_z": 0.59,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_487.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_487.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_562",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2446,
+       "relevant": false,
+       "target_z": -0.45,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_562.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_562.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1177",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2382,
+       "relevant": false,
+       "target_z": -0.515,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1177.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1177.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.7273
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_487",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3104,
+       "relevant": true,
+       "target_z": 0.59,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_487.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_487.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3056,
+       "relevant": true,
+       "target_z": 1.096,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_562",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.3034,
+       "relevant": false,
+       "target_z": -0.45,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_562.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_562.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_727",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2999,
+       "relevant": true,
+       "target_z": 1.096,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_727.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_727.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_742",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.296,
+       "relevant": false,
+       "target_z": -0.11,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_742.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_742.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1267",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2927,
+       "relevant": true,
+       "target_z": 1.229,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1267.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1267.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2917,
+       "relevant": true,
+       "target_z": 0.75,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1447",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2914,
+       "relevant": true,
+       "target_z": 0.726,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1447.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1447.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.8048
+    }
+   }
+  },
+  {
+   "query_id": "metal:decay:low",
+   "material": "metal",
+   "factor": "decay",
+   "factor_label": "Decay",
+   "direction": "low",
+   "direction_label": "short dry",
+   "text": "a short-dry metal impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 22,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1347,
+       "relevant": false,
+       "target_z": -1.29,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "83_WoodVase:row_757",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1177,
+       "relevant": false,
+       "target_z": -0.321,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_757.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_757.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_952",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1168,
+       "relevant": false,
+       "target_z": -0.826,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_952.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "75_FlowerpotSmallCeramic:row_787",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1113,
+       "relevant": false,
+       "target_z": -1.105,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_787.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_787.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1067,
+       "relevant": false,
+       "target_z": -0.591,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "83_WoodVase:row_1687",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1042,
+       "relevant": false,
+       "target_z": -0.467,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_1687.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_1687.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1147",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.102,
+       "relevant": false,
+       "target_z": -1.19,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1147.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1147.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1012,
+       "relevant": true,
+       "target_z": -0.206,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0694
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1717,
+       "relevant": false,
+       "target_z": -1.29,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "83_WoodVase:row_757",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1685,
+       "relevant": false,
+       "target_z": -0.321,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_757.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_757.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1267",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1559,
+       "relevant": true,
+       "target_z": -0.29,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1267.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1267.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_37",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1543,
+       "relevant": true,
+       "target_z": -0.257,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_37.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_37.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1514,
+       "relevant": false,
+       "target_z": 0.31,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_487",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1485,
+       "relevant": false,
+       "target_z": 0.035,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_487.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_487.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_727",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1464,
+       "relevant": true,
+       "target_z": -0.368,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_727.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_727.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.146,
+       "relevant": false,
+       "target_z": 0.044,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.3445
+    }
+   }
+  },
+  {
+   "query_id": "metal:decay:high",
+   "material": "metal",
+   "factor": "decay",
+   "factor_label": "Decay",
+   "direction": "high",
+   "direction_label": "long ringing",
+   "text": "a long-ringing metal impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 78,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_1387",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2365,
+       "relevant": true,
+       "target_z": 0.746,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1387.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1387.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2341,
+       "relevant": true,
+       "target_z": 0.31,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_2452",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.233,
+       "relevant": true,
+       "target_z": 0.709,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2452.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_1792",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2289,
+       "relevant": true,
+       "target_z": 0.411,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1792.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1792.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1492",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2233,
+       "relevant": true,
+       "target_z": 0.535,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1492.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1492.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1582",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2223,
+       "relevant": true,
+       "target_z": 2.049,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1582.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1582.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_1612",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.221,
+       "relevant": false,
+       "target_z": -0.36,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1612.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1612.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2204,
+       "relevant": true,
+       "target_z": 0.249,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.9266
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_2452",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2889,
+       "relevant": true,
+       "target_z": 0.709,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2452.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1387",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2837,
+       "relevant": true,
+       "target_z": 0.746,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1387.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1387.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1582",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2793,
+       "relevant": true,
+       "target_z": 2.049,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1582.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1582.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2842",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2771,
+       "relevant": true,
+       "target_z": 0.714,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2842.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2842.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_2557",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.272,
+       "relevant": true,
+       "target_z": 0.881,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2557.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2557.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1057",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2672,
+       "relevant": true,
+       "target_z": 0.425,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1057.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_1192",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2659,
+       "relevant": true,
+       "target_z": 0.269,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1192.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1192.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_937",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2636,
+       "relevant": true,
+       "target_z": 0.782,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_937.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_937.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 1.0
+    }
+   }
+  },
+  {
+   "query_id": "plastic:brightness:low",
+   "material": "plastic",
+   "factor": "brightness",
+   "factor_label": "Brightness",
+   "direction": "low",
+   "direction_label": "dull",
+   "text": "a dull plastic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 53,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "73_PlasticBin:row_1312",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0503,
+       "relevant": false,
+       "target_z": 0.049,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1312.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1312.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "73_PlasticBin:row_1132",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0498,
+       "relevant": true,
+       "target_z": -3.073,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1132.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1132.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1567",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0465,
+       "relevant": false,
+       "target_z": 0.489,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1567.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "73_PlasticBin:row_877",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0428,
+       "relevant": true,
+       "target_z": -2.808,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_877.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_877.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "73_PlasticBin:row_1072",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0404,
+       "relevant": true,
+       "target_z": -2.207,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1072.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1072.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "73_PlasticBin:row_1252",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0394,
+       "relevant": false,
+       "target_z": 0.294,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1252.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1252.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "73_PlasticBin:row_1882",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0358,
+       "relevant": false,
+       "target_z": 0.684,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1882.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1882.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "73_PlasticBin:row_892",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.033,
+       "relevant": true,
+       "target_z": -2.932,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_892.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_892.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.4518
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "73_PlasticBin:row_1132",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.1532,
+       "relevant": true,
+       "target_z": -3.073,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1132.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1132.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "73_PlasticBin:row_1252",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.1448,
+       "relevant": false,
+       "target_z": 0.294,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1252.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1252.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "73_PlasticBin:row_1072",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.1388,
+       "relevant": true,
+       "target_z": -2.207,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1072.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1072.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "73_PlasticBin:row_1312",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.138,
+       "relevant": false,
+       "target_z": 0.049,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1312.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1312.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "73_PlasticBin:row_52",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.1361,
+       "relevant": false,
+       "target_z": 0.863,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_52.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_52.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "73_PlasticBin:row_1792",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.133,
+       "relevant": false,
+       "target_z": 0.1,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1792.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1792.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "73_PlasticBin:row_892",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.131,
+       "relevant": true,
+       "target_z": -2.932,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_892.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_892.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "73_PlasticBin:row_877",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.1305,
+       "relevant": true,
+       "target_z": -2.808,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_877.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_877.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.4729
+    }
+   }
+  },
+  {
+   "query_id": "plastic:brightness:high",
+   "material": "plastic",
+   "factor": "brightness",
+   "factor_label": "Brightness",
+   "direction": "high",
+   "direction_label": "bright",
+   "text": "a bright plastic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 47,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.103,
+       "relevant": false,
+       "target_z": 0.154,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0829,
+       "relevant": false,
+       "target_z": 1.132,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1012",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0808,
+       "relevant": false,
+       "target_z": 0.405,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1012.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1012.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_352",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0807,
+       "relevant": false,
+       "target_z": 0.538,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_352.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_352.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0793,
+       "relevant": false,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_232",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0715,
+       "relevant": false,
+       "target_z": 1.067,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_232.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_232.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_1057",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0698,
+       "relevant": false,
+       "target_z": 0.057,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1057.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0697,
+       "relevant": false,
+       "target_z": 0.658,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1659,
+       "relevant": false,
+       "target_z": 0.154,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_352",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1596,
+       "relevant": false,
+       "target_z": 0.538,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_352.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_352.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1012",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1558,
+       "relevant": false,
+       "target_z": 0.405,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1012.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1012.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1521,
+       "relevant": false,
+       "target_z": 0.658,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.148,
+       "relevant": false,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_517",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1443,
+       "relevant": false,
+       "target_z": 0.15,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_517.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_517.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_232",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1346,
+       "relevant": false,
+       "target_z": 1.067,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_232.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_232.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1057",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1341,
+       "relevant": false,
+       "target_z": 0.057,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1057.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    }
+   }
+  },
+  {
+   "query_id": "plastic:attack:low",
+   "material": "plastic",
+   "factor": "attack",
+   "factor_label": "Attack",
+   "direction": "low",
+   "direction_label": "soft",
+   "text": "a soft plastic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 59,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0819,
+       "relevant": false,
+       "target_z": 0.113,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_142",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0793,
+       "relevant": false,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_142.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_142.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_2227",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0602,
+       "relevant": false,
+       "target_z": 0.416,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2227.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2227.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2497",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0551,
+       "relevant": false,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2497.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2497.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_232",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0487,
+       "relevant": false,
+       "target_z": -0.467,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_232.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_232.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1342",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0462,
+       "relevant": false,
+       "target_z": 0.353,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1342.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1342.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1567",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0403,
+       "relevant": false,
+       "target_z": 0.54,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1567.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2347",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0391,
+       "relevant": false,
+       "target_z": 0.231,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2347.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2347.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_517",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1039,
+       "relevant": false,
+       "target_z": -0.233,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_517.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_517.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "73_PlasticBin:row_2632",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.1023,
+       "relevant": true,
+       "target_z": -0.704,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_2632.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_2632.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "73_PlasticBin:row_1957",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.1009,
+       "relevant": true,
+       "target_z": -0.479,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1957.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1957.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2497",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0998,
+       "relevant": false,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2497.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2497.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0992,
+       "relevant": false,
+       "target_z": 0.113,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "73_PlasticBin:row_877",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.099,
+       "relevant": true,
+       "target_z": -0.626,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_877.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_877.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0975,
+       "relevant": false,
+       "target_z": -0.385,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "73_PlasticBin:row_1072",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0957,
+       "relevant": true,
+       "target_z": -0.746,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1072.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1072.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.4604
+    }
+   }
+  },
+  {
+   "query_id": "plastic:attack:high",
+   "material": "plastic",
+   "factor": "attack",
+   "factor_label": "Attack",
+   "direction": "high",
+   "direction_label": "sharp",
+   "text": "a sharp plastic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 41,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1145,
+       "relevant": false,
+       "target_z": 0.113,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1101,
+       "relevant": false,
+       "target_z": 0.75,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "83_WoodVase:row_757",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1094,
+       "relevant": false,
+       "target_z": -0.504,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_757.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_757.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1032,
+       "relevant": false,
+       "target_z": -0.385,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_232",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1023,
+       "relevant": false,
+       "target_z": -0.467,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_232.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_232.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_142",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1016,
+       "relevant": false,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_142.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_142.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "83_WoodVase:row_1687",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.099,
+       "relevant": false,
+       "target_z": 0.099,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_1687.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_1687.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0934,
+       "relevant": false,
+       "target_z": 1.096,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "83_WoodVase:row_757",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1865,
+       "relevant": false,
+       "target_z": -0.504,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_757.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_757.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1705,
+       "relevant": false,
+       "target_z": 0.75,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_352",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1646,
+       "relevant": false,
+       "target_z": -1.674,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_352.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_352.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1642,
+       "relevant": false,
+       "target_z": -0.385,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1012",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1614,
+       "relevant": false,
+       "target_z": -0.352,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1012.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1012.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "83_WoodVase:row_1687",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1561,
+       "relevant": false,
+       "target_z": 0.099,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_1687.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_1687.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_517",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1542,
+       "relevant": false,
+       "target_z": -0.233,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_517.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_517.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1539,
+       "relevant": false,
+       "target_z": -0.402,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0663
+    }
+   }
+  },
+  {
+   "query_id": "plastic:decay:low",
+   "material": "plastic",
+   "factor": "decay",
+   "factor_label": "Decay",
+   "direction": "low",
+   "direction_label": "short dry",
+   "text": "a short-dry plastic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 19,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1115,
+       "relevant": false,
+       "target_z": -0.591,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_952",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1023,
+       "relevant": false,
+       "target_z": -0.826,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_952.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.094,
+       "relevant": false,
+       "target_z": -1.29,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "83_WoodVase:row_757",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.0908,
+       "relevant": false,
+       "target_z": -0.321,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_757.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_757.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1567",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0865,
+       "relevant": false,
+       "target_z": -0.78,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1567.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "83_WoodVase:row_1687",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.0803,
+       "relevant": false,
+       "target_z": -0.467,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_1687.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_1687.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "83_WoodVase:row_142",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.0787,
+       "relevant": false,
+       "target_z": -0.49,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_142.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_142.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0753,
+       "relevant": false,
+       "target_z": -0.206,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "83_WoodVase:row_757",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1857,
+       "relevant": false,
+       "target_z": -0.321,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_757.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_757.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "83_WoodVase:row_817",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1424,
+       "relevant": false,
+       "target_z": -0.246,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_817.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_817.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1416,
+       "relevant": false,
+       "target_z": -1.29,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "83_WoodVase:row_1687",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1392,
+       "relevant": false,
+       "target_z": -0.467,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_1687.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_1687.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "73_PlasticBin:row_52",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.1388,
+       "relevant": false,
+       "target_z": 1.103,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_52.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_52.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "83_WoodVase:row_502",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1388,
+       "relevant": false,
+       "target_z": -0.617,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_502.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_502.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "83_WoodVase:row_292",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1347,
+       "relevant": false,
+       "target_z": -0.401,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_292.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_292.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "75_FlowerpotSmallCeramic:row_952",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1336,
+       "relevant": false,
+       "target_z": -0.826,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_952.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    }
+   }
+  },
+  {
+   "query_id": "plastic:decay:high",
+   "material": "plastic",
+   "factor": "decay",
+   "factor_label": "Decay",
+   "direction": "high",
+   "direction_label": "long ringing",
+   "text": "a long-ringing plastic impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 81,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1746,
+       "relevant": false,
+       "target_z": 0.249,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_352",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1718,
+       "relevant": false,
+       "target_z": 0.43,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_352.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_352.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1012",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1682,
+       "relevant": false,
+       "target_z": 0.739,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1012.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1012.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_1057",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1679,
+       "relevant": false,
+       "target_z": 0.425,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1057.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1656,
+       "relevant": false,
+       "target_z": 0.872,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1417",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1513,
+       "relevant": false,
+       "target_z": 0.744,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1417.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1417.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_2452",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1491,
+       "relevant": false,
+       "target_z": 0.709,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2452.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1072",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.146,
+       "relevant": false,
+       "target_z": 0.651,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1072.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1072.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2475,
+       "relevant": false,
+       "target_z": 0.872,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1057",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2466,
+       "relevant": false,
+       "target_z": 0.425,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1057.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_352",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2444,
+       "relevant": false,
+       "target_z": 0.43,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_352.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_352.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2394,
+       "relevant": false,
+       "target_z": 0.249,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1072",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2356,
+       "relevant": false,
+       "target_z": 0.651,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1072.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1072.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1012",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2324,
+       "relevant": false,
+       "target_z": 0.739,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1012.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1012.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_2452",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2248,
+       "relevant": false,
+       "target_z": 0.709,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2452.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1192",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.2219,
+       "relevant": false,
+       "target_z": 0.269,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1192.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1192.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    }
+   }
+  },
+  {
+   "query_id": "wood:brightness:low",
+   "material": "wood",
+   "factor": "brightness",
+   "factor_label": "Brightness",
+   "direction": "low",
+   "direction_label": "dull",
+   "text": "a dull wood impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 31,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1567",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0404,
+       "relevant": false,
+       "target_z": 0.489,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1567.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "73_PlasticBin:row_1312",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0211,
+       "relevant": false,
+       "target_z": 0.049,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1312.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1312.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0172,
+       "relevant": false,
+       "target_z": 0.335,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "83_WoodVase:row_142",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.009,
+       "relevant": true,
+       "target_z": -0.785,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_142.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_142.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "83_WoodVase:row_562",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.0035,
+       "relevant": false,
+       "target_z": 0.087,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_562.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_562.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "73_PlasticBin:row_1072",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0033,
+       "relevant": false,
+       "target_z": -2.207,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1072.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1072.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1627",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0013,
+       "relevant": false,
+       "target_z": -0.043,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1627.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "73_PlasticBin:row_1132",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0001,
+       "relevant": false,
+       "target_z": -3.073,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1132.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1132.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.1584
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "83_WoodVase:row_502",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.14,
+       "relevant": true,
+       "target_z": -0.695,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_502.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_502.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "83_WoodVase:row_562",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1314,
+       "relevant": false,
+       "target_z": 0.087,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_562.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_562.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "83_WoodVase:row_157",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.127,
+       "relevant": true,
+       "target_z": -0.534,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_157.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_157.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "83_WoodVase:row_142",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1248,
+       "relevant": true,
+       "target_z": -0.785,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_142.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_142.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "83_WoodVase:row_2227",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1212,
+       "relevant": true,
+       "target_z": -0.424,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_2227.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_2227.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "83_WoodVase:row_292",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1111,
+       "relevant": true,
+       "target_z": -0.379,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_292.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_292.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "83_WoodVase:row_172",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1072,
+       "relevant": true,
+       "target_z": -0.595,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_172.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_172.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "73_PlasticBin:row_1252",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.1067,
+       "relevant": false,
+       "target_z": 0.294,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1252.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1252.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.7255
+    }
+   }
+  },
+  {
+   "query_id": "wood:brightness:high",
+   "material": "wood",
+   "factor": "brightness",
+   "factor_label": "Brightness",
+   "direction": "high",
+   "direction_label": "bright",
+   "text": "a bright wood impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 69,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1168,
+       "relevant": false,
+       "target_z": 0.52,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1098,
+       "relevant": false,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_1177",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0986,
+       "relevant": false,
+       "target_z": 0.609,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1177.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1177.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0963,
+       "relevant": false,
+       "target_z": 1.132,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1447",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0961,
+       "relevant": false,
+       "target_z": 0.165,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1447.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1447.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1102",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0881,
+       "relevant": false,
+       "target_z": 0.301,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1102.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1102.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_1387",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0872,
+       "relevant": false,
+       "target_z": 0.21,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1387.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1387.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1702",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0837,
+       "relevant": false,
+       "target_z": -0.098,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1702.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1702.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_1627",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1727,
+       "relevant": false,
+       "target_z": 0.52,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1627.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1602,
+       "relevant": false,
+       "target_z": 0.603,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_742",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1576,
+       "relevant": false,
+       "target_z": 0.417,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_742.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_742.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1532,
+       "relevant": false,
+       "target_z": 1.132,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1102",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1452,
+       "relevant": false,
+       "target_z": 0.301,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1102.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1102.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_1267",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1435,
+       "relevant": false,
+       "target_z": 0.832,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1267.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1267.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_967",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1418,
+       "relevant": false,
+       "target_z": 0.358,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_967.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_967.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1358,
+       "relevant": false,
+       "target_z": 0.658,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    }
+   }
+  },
+  {
+   "query_id": "wood:attack:low",
+   "material": "wood",
+   "factor": "attack",
+   "factor_label": "Attack",
+   "direction": "low",
+   "direction_label": "soft",
+   "text": "a soft wood impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 66,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1567",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.03,
+       "relevant": false,
+       "target_z": 0.54,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1567.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_142",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0223,
+       "relevant": false,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_142.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_142.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0153,
+       "relevant": false,
+       "target_z": 0.113,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2497",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0106,
+       "relevant": false,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2497.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2497.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.004,
+       "relevant": false,
+       "target_z": -0.206,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_2227",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": -0.0,
+       "relevant": false,
+       "target_z": 0.416,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2227.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2227.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_232",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": -0.0033,
+       "relevant": false,
+       "target_z": -0.467,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_232.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_232.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": -0.0043,
+       "relevant": false,
+       "target_z": 0.75,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "83_WoodVase:row_562",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.0911,
+       "relevant": true,
+       "target_z": -0.281,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_562.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_562.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "83_WoodVase:row_157",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.0812,
+       "relevant": true,
+       "target_z": -0.496,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_157.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_157.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "83_WoodVase:row_292",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.0689,
+       "relevant": true,
+       "target_z": -0.513,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_292.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_292.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "83_WoodVase:row_502",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.0682,
+       "relevant": true,
+       "target_z": -0.303,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_502.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_502.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "73_PlasticBin:row_1072",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.068,
+       "relevant": false,
+       "target_z": -0.746,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1072.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1072.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "83_WoodVase:row_142",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.0667,
+       "relevant": true,
+       "target_z": -0.372,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_142.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_142.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "73_PlasticBin:row_1252",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0631,
+       "relevant": false,
+       "target_z": -0.725,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_1252.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_1252.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "73_PlasticBin:row_2632",
+       "object_id": "73_PlasticBin",
+       "object_type": "bin",
+       "material": "plastic",
+       "score": 0.0628,
+       "relevant": false,
+       "target_z": -0.704,
+       "audio_path": "audio/test/original/reference/73_PlasticBin__row_2632.flac",
+       "audio_url": "assets/audio/retrieval/73_PlasticBin__row_2632.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.7084
+    }
+   }
+  },
+  {
+   "query_id": "wood:attack:high",
+   "material": "wood",
+   "factor": "attack",
+   "factor_label": "Attack",
+   "direction": "high",
+   "direction_label": "sharp",
+   "text": "a sharp wood impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 34,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1567",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0718,
+       "relevant": false,
+       "target_z": 0.54,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1567.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0629,
+       "relevant": false,
+       "target_z": -0.206,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0607,
+       "relevant": false,
+       "target_z": 1.023,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_2287",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0535,
+       "relevant": false,
+       "target_z": 0.113,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2287.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1627",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0479,
+       "relevant": false,
+       "target_z": 0.652,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1627.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "75_FlowerpotSmallCeramic:row_787",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0446,
+       "relevant": false,
+       "target_z": 0.468,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_787.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_787.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_142",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.044,
+       "relevant": false,
+       "target_z": -0.302,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_142.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_142.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1282",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0436,
+       "relevant": false,
+       "target_z": 0.032,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1282.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1282.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "83_WoodVase:row_1687",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1304,
+       "relevant": true,
+       "target_z": 0.099,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_1687.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_1687.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "83_WoodVase:row_2782",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1162,
+       "relevant": false,
+       "target_z": -0.292,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_2782.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_2782.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "83_WoodVase:row_2707",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1141,
+       "relevant": true,
+       "target_z": 0.062,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_2707.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_2707.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "83_WoodVase:row_1417",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1139,
+       "relevant": false,
+       "target_z": -0.474,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_1417.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_1417.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1057,
+       "relevant": false,
+       "target_z": 1.023,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "83_WoodVase:row_157",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1055,
+       "relevant": false,
+       "target_z": -0.496,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_157.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_157.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "83_WoodVase:row_757",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1025,
+       "relevant": false,
+       "target_z": -0.504,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_757.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_757.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "83_WoodVase:row_2662",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1007,
+       "relevant": true,
+       "target_z": 0.117,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_2662.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_2662.mp3"
+      }
+     ],
+     "recall_at_1": 1.0,
+     "ndcg_at_10": 0.3996
+    }
+   }
+  },
+  {
+   "query_id": "wood:decay:low",
+   "material": "wood",
+   "factor": "decay",
+   "factor_label": "Decay",
+   "direction": "low",
+   "direction_label": "short dry",
+   "text": "a short-dry wood impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 86,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1762",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0949,
+       "relevant": false,
+       "target_z": -0.591,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1762.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0902,
+       "relevant": false,
+       "target_z": -1.29,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1567",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.082,
+       "relevant": false,
+       "target_z": -0.78,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1567.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "75_FlowerpotSmallCeramic:row_952",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0765,
+       "relevant": false,
+       "target_z": -0.826,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_952.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1627",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0587,
+       "relevant": false,
+       "target_z": -0.57,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1627.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1627.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1282",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0561,
+       "relevant": false,
+       "target_z": -0.51,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1282.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1282.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1147",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0516,
+       "relevant": false,
+       "target_z": -1.19,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1147.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1147.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "75_FlowerpotSmallCeramic:row_1477",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.0504,
+       "relevant": false,
+       "target_z": -0.411,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1477.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_1477.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "75_FlowerpotSmallCeramic:row_7",
+       "object_id": "75_FlowerpotSmallCeramic",
+       "object_type": "flowerpot",
+       "material": "ceramic",
+       "score": 0.1479,
+       "relevant": false,
+       "target_z": -1.29,
+       "audio_path": "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+       "audio_url": "assets/audio/retrieval/75_FlowerpotSmallCeramic__row_7.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "83_WoodVase:row_1687",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1456,
+       "relevant": true,
+       "target_z": -0.467,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_1687.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_1687.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "83_WoodVase:row_502",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1381,
+       "relevant": true,
+       "target_z": -0.617,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_502.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_502.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "83_WoodVase:row_757",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1324,
+       "relevant": true,
+       "target_z": -0.321,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_757.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_757.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "83_WoodVase:row_157",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1171,
+       "relevant": true,
+       "target_z": -0.44,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_157.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_157.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "83_WoodVase:row_142",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1105,
+       "relevant": true,
+       "target_z": -0.49,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_142.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_142.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "83_WoodVase:row_517",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1099,
+       "relevant": false,
+       "target_z": 0.014,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_517.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_517.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "83_WoodVase:row_2782",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1082,
+       "relevant": true,
+       "target_z": -0.314,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_2782.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_2782.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.7065
+    }
+   }
+  },
+  {
+   "query_id": "wood:decay:high",
+   "material": "wood",
+   "factor": "decay",
+   "factor_label": "Decay",
+   "direction": "high",
+   "direction_label": "long ringing",
+   "text": "a long-ringing wood impact sound",
+   "pool_size": 400,
+   "relevant_in_pool": 13,
+   "models": {
+    "clap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_1057",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1161,
+       "relevant": false,
+       "target_z": 0.425,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1057.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1012",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1112,
+       "relevant": false,
+       "target_z": 0.739,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1012.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1012.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_2452",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1064,
+       "relevant": false,
+       "target_z": 0.709,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2452.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_1177",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1035,
+       "relevant": false,
+       "target_z": 0.262,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1177.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1177.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1507",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1028,
+       "relevant": false,
+       "target_z": 0.31,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1507.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1016,
+       "relevant": false,
+       "target_z": 0.249,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_1072",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.097,
+       "relevant": false,
+       "target_z": 0.651,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1072.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1072.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "92_MetalSpatula:row_1417",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.0947,
+       "relevant": false,
+       "target_z": 0.744,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1417.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1417.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0
+    },
+    "resiclap": {
+     "results": [
+      {
+       "rank": 1,
+       "clip_id": "92_MetalSpatula:row_1057",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.183,
+       "relevant": false,
+       "target_z": 0.425,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1057.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1057.mp3"
+      },
+      {
+       "rank": 2,
+       "clip_id": "92_MetalSpatula:row_1072",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1749,
+       "relevant": false,
+       "target_z": 0.651,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1072.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1072.mp3"
+      },
+      {
+       "rank": 3,
+       "clip_id": "92_MetalSpatula:row_2452",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1716,
+       "relevant": false,
+       "target_z": 0.709,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2452.mp3"
+      },
+      {
+       "rank": 4,
+       "clip_id": "92_MetalSpatula:row_1192",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1663,
+       "relevant": false,
+       "target_z": 0.269,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1192.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1192.mp3"
+      },
+      {
+       "rank": 5,
+       "clip_id": "92_MetalSpatula:row_1012",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1629,
+       "relevant": false,
+       "target_z": 0.739,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_1012.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_1012.mp3"
+      },
+      {
+       "rank": 6,
+       "clip_id": "92_MetalSpatula:row_2872",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1587,
+       "relevant": false,
+       "target_z": 0.249,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_2872.mp3"
+      },
+      {
+       "rank": 7,
+       "clip_id": "92_MetalSpatula:row_337",
+       "object_id": "92_MetalSpatula",
+       "object_type": "spatula",
+       "material": "metal",
+       "score": 0.1526,
+       "relevant": false,
+       "target_z": 0.872,
+       "audio_path": "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+       "audio_url": "assets/audio/retrieval/92_MetalSpatula__row_337.mp3"
+      },
+      {
+       "rank": 8,
+       "clip_id": "83_WoodVase:row_1447",
+       "object_id": "83_WoodVase",
+       "object_type": "vase",
+       "material": "wood",
+       "score": 0.1508,
+       "relevant": true,
+       "target_z": 2.768,
+       "audio_path": "audio/test/original/reference/83_WoodVase__row_1447.flac",
+       "audio_url": "assets/audio/retrieval/83_WoodVase__row_1447.mp3"
+      }
+     ],
+     "recall_at_1": 0.0,
+     "ndcg_at_10": 0.0694
+    }
+   }
+  }
+ ],
+ "needed_audio": [
+  "audio/test/original/reference/64_CeramicMug__row_1042.flac",
+  "audio/test/original/reference/64_CeramicMug__row_2452.flac",
+  "audio/test/original/reference/64_CeramicMug__row_2752.flac",
+  "audio/test/original/reference/64_CeramicMug__row_502.flac",
+  "audio/test/original/reference/73_PlasticBin__row_1072.flac",
+  "audio/test/original/reference/73_PlasticBin__row_1132.flac",
+  "audio/test/original/reference/73_PlasticBin__row_1252.flac",
+  "audio/test/original/reference/73_PlasticBin__row_1312.flac",
+  "audio/test/original/reference/73_PlasticBin__row_1792.flac",
+  "audio/test/original/reference/73_PlasticBin__row_1882.flac",
+  "audio/test/original/reference/73_PlasticBin__row_1957.flac",
+  "audio/test/original/reference/73_PlasticBin__row_2632.flac",
+  "audio/test/original/reference/73_PlasticBin__row_52.flac",
+  "audio/test/original/reference/73_PlasticBin__row_877.flac",
+  "audio/test/original/reference/73_PlasticBin__row_892.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1057.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1147.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1282.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1477.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1537.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1567.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1582.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1597.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1627.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1642.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1672.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1762.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1822.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_1927.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_2107.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_2197.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_2347.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_2602.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_487.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_652.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_7.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_712.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_787.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_892.flac",
+  "audio/test/original/reference/75_FlowerpotSmallCeramic__row_952.flac",
+  "audio/test/original/reference/83_WoodVase__row_1417.flac",
+  "audio/test/original/reference/83_WoodVase__row_142.flac",
+  "audio/test/original/reference/83_WoodVase__row_1447.flac",
+  "audio/test/original/reference/83_WoodVase__row_157.flac",
+  "audio/test/original/reference/83_WoodVase__row_1687.flac",
+  "audio/test/original/reference/83_WoodVase__row_172.flac",
+  "audio/test/original/reference/83_WoodVase__row_2227.flac",
+  "audio/test/original/reference/83_WoodVase__row_2662.flac",
+  "audio/test/original/reference/83_WoodVase__row_2707.flac",
+  "audio/test/original/reference/83_WoodVase__row_2782.flac",
+  "audio/test/original/reference/83_WoodVase__row_292.flac",
+  "audio/test/original/reference/83_WoodVase__row_502.flac",
+  "audio/test/original/reference/83_WoodVase__row_517.flac",
+  "audio/test/original/reference/83_WoodVase__row_562.flac",
+  "audio/test/original/reference/83_WoodVase__row_757.flac",
+  "audio/test/original/reference/83_WoodVase__row_817.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1012.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1057.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1072.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1102.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1177.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1192.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1267.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1342.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1387.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1417.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_142.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1447.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1492.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1507.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1537.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1582.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1612.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1627.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1702.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_1792.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2227.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2287.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_232.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2347.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2452.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2497.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2557.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2722.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2842.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2872.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_2992.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_337.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_352.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_37.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_487.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_517.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_562.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_727.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_742.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_937.flac",
+  "audio/test/original/reference/92_MetalSpatula__row_967.flac"
+ ]
+};

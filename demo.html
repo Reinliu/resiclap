@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retrieval demo &amp;middot; ResiCLAP: Semantic-Preserving Residual Enhancement for Fine-Grained Impact Sound Retrieval</title>
+<meta name="description" content="Project page for ResiCLAP: Semantic-Preserving Residual Enhancement for Fine-Grained Impact Sound Retrieval">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Resi<span>CLAP</span></a>
+    <nav><a href="index.html">Overview</a><a href="method.html">Method</a><a href="dataset.html">Dataset</a><a href="results.html">Results</a><a href="demo.html" class="active">Retrieval demo</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section>
+  <h1>Retrieval demo</h1>
+  <p class="lede">These are real rankings, not illustrations. Each query is
+  encoded once by the frozen CLAP text encoder and scored against all
+  400 held-out test recordings by cosine similarity.
+  The only difference between the two columns is whether the audio embedding is
+  frozen CLAP or ResiCLAP.</p>
+</section>
+
+<section>
+  <h2>Try a query</h2>
+  <p>All 24 evaluation queries are available. The shortcuts below show the three
+  largest improvements and, for balance, the query where ResiCLAP helps least.</p>
+  <div class="chips"><button class="chip" data-material="ceramic" data-factor="attack" data-direction="high">a sharp ceramic impact sound<span>+0.733</span></button><button class="chip" data-material="wood" data-factor="attack" data-direction="low">a soft wood impact sound<span>+0.708</span></button><button class="chip" data-material="ceramic" data-factor="brightness" data-direction="high">a bright ceramic impact sound<span>+0.707</span></button><button class="chip" data-material="wood" data-factor="brightness" data-direction="high">a bright wood impact sound<span>+0.000</span></button></div>
+
+  <div class="controls">
+    <div class="control">
+      <label for="material">Material</label>
+      <select id="material"></select>
+    </div>
+    <div class="control">
+      <label for="factor">Property</label>
+      <select id="factor"></select>
+    </div>
+    <div class="control">
+      <label for="direction">Direction</label>
+      <select id="direction"></select>
+    </div>
+  </div>
+
+  <div id="query-summary" class="qsummary"></div>
+  <div id="results" class="compare"></div>
+
+  <p class="tnote">A result counts as relevant when it matches the queried
+  material <em>and</em> falls on the correct side of that property's
+  distribution among sounds of the same material &mdash; the same
+  category-relative criterion used in the paper. Improvements are not uniform:
+  some queries gain a great deal, others not at all. Rankings come from the
+  seed-7 checkpoint, while the tables elsewhere on this site report means over
+  seeds 7, 17 and 27, so a single query here may differ from the averaged
+  figure.</p>
+</section>
+
+<script>
+window.DEMO_DEFAULT = {"material": "ceramic", "factor": "attack", "direction": "high"};
+</script>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p>Project page for an anonymous submission under review. Audio examples are
+    derived from the RealImpact dataset (MIT license) and are redistributed here
+    for research demonstration.</p>
+  </div>
+</footer>
+<script src="assets/js/data-retrieval.js"></script>
+<script src="assets/js/data-curation.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
