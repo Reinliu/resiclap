@@ -117,10 +117,13 @@
         row.appendChild(el("span", "rank", String(item.rank)));
         row.appendChild(playButton(item.audio_url));
         var info = el("div", "info");
-        info.appendChild(el("div", "name", item.object_type));
+        info.appendChild(el("div", "name", item.object_name));
         info.appendChild(
           el("div", "sub",
-             item.material + " \u00B7 z=" + item.target_z.toFixed(2) +
+             "strike " + item.strike_point +
+             " \u00B7 mic ring " + item.mic_ring +
+             " / " + item.mic_angle_deg + "\u00B0" +
+             " \u00B7 z=" + item.target_z.toFixed(2) +
              " \u00B7 sim " + item.score.toFixed(3))
         );
         row.appendChild(info);
@@ -208,55 +211,5 @@
     }
   }
 
-  // ------------------------------------------------------------ curation
-  function initCuration() {
-    var mount = document.getElementById("curation-examples");
-    if (!mount || !window.CURATION) return;
-
-    window.CURATION.examples.forEach(function (example) {
-      var node = el("div", "example");
-      var header = el("header");
-      header.appendChild(
-        el("h3", null, example.object_type + " (" + example.material + ")")
-      );
-      header.appendChild(el("div", "meta", example.clip_id));
-      node.appendChild(header);
-
-      var origin = el("div", "vrow origin");
-      origin.appendChild(playButton(example.original.audio_url));
-      origin.appendChild(el("span", "label", "Original recording"));
-      origin.appendChild(
-        el("span", "delta",
-           "brightness " + example.original.brightness.toFixed(2) +
-           " \u00B7 attack " + example.original.attack.toFixed(2) +
-           " \u00B7 decay " + example.original.decay.toFixed(2))
-      );
-      node.appendChild(origin);
-
-      example.variants.forEach(function (variant) {
-        var row = el("div", "vrow");
-        row.appendChild(playButton(variant.audio_url));
-        row.appendChild(el("span", "label", variant.label));
-        var delta = variant.delta >= 0 ? "+" : "";
-        row.appendChild(
-          el("span", "delta",
-             variant.measure + ": " + variant.target_before.toFixed(2) +
-             " \u2192 " + variant.target_after.toFixed(2) +
-             " (" + delta + variant.delta.toFixed(2) + ")")
-        );
-        if (!variant.retained && variant.reject_reason) {
-          row.appendChild(el("span", "why", variant.reject_reason));
-        }
-        row.appendChild(
-          el("span", "pill " + (variant.retained ? "good" : "bad"),
-             variant.retained ? "kept" : "rejected")
-        );
-        node.appendChild(row);
-      });
-      mount.appendChild(node);
-    });
-  }
-
   initDemo();
-  initCuration();
 })();

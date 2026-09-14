@@ -11,7 +11,7 @@
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="index.html">Resi<span>CLAP</span></a>
-    <nav><a href="index.html">Overview</a><a href="method.html">Method</a><a href="dataset.html">Dataset</a><a href="results.html">Results</a><a href="demo.html" class="active">Retrieval demo</a></nav>
+    <nav><a href="index.html">Overview</a><a href="results.html">Results</a><a href="demo.html" class="active">Retrieval demo</a></nav>
   </div>
 </header>
 <main class="wrap">
@@ -23,6 +23,17 @@
   400 held-out test recordings by cosine similarity.
   The only difference between the two columns is whether the audio embedding is
   frozen CLAP or ResiCLAP.</p>
+  <p>Each result is a real recording of an object being struck. The name is the
+  <strong>struck object</strong> &mdash; the thing making the sound, not a
+  target. The test pool holds 400 recordings of just
+  5 objects
+  (Mug (ceramic), Bin (plastic), Flowerpot (small ceramic), Vase (wood), Spatula (metal)), none of which the model saw during training, so the same name
+  recurs often. Individual recordings differ by where the object was struck
+  (one of 5 strike points) and by which
+  microphone recorded it &mdash; the array spans 4
+  distance rings and a range of angles, both shown beneath each name. Two recordings of the same object
+  can therefore sound quite different, which is exactly the distinction these
+  queries are asking the model to make.</p>
 </section>
 
 <section>
@@ -72,7 +83,6 @@ window.DEMO_DEFAULT = {"material": "ceramic", "factor": "attack", "direction": "
   </div>
 </footer>
 <script src="assets/js/data-retrieval.js"></script>
-<script src="assets/js/data-curation.js"></script>
 <script src="assets/js/site.js"></script>
 </body>
 </html>

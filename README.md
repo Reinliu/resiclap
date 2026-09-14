@@ -28,7 +28,6 @@ edit the generator and re-run it from the project root:
 
 ```bash
 .venv/bin/python experiments/step_46_build_website/export_retrieval.py
-.venv/bin/python experiments/step_46_build_website/export_curation.py
 .venv/bin/python experiments/step_46_build_website/run.py
 ```
 
@@ -38,12 +37,10 @@ Pass `--skip-audio` to `run.py` to reuse already-transcoded MP3 files.
 
 | Path | Description |
 | --- | --- |
-| `index.html` | Overview and headline results |
-| `method.html` | Architecture and training objective |
-| `dataset.html` | Dataset curation pipeline and worked audio examples |
+| `index.html` | Overview, evaluation data, architecture and training objective |
 | `results.html` | Ablations, generalization and error analysis |
 | `demo.html` | Side-by-side CLAP vs ResiCLAP retrieval with audio |
-| `assets/js/data-*.js` | Generated data consumed by the front-end |
+| `assets/js/data-retrieval.js` | Generated rankings consumed by the front-end |
 
 ## Audio
 
