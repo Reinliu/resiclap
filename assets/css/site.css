@@ -59,18 +59,8 @@ p { margin: 0 0 13px; }
   text-transform: uppercase; letter-spacing: .09em; font-size: 11.5px;
   font-weight: 700; color: var(--muted); margin-bottom: 10px;
 }
-.hero h1 { font-size: 38px; max-width: 22ch; }
-.lede { font-size: 18px; color: #333a42; max-width: 68ch; }
-.cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
-.btn {
-  display: inline-block; padding: 9px 16px; border-radius: 8px;
-  border: 1px solid var(--line); text-decoration: none; color: var(--ink);
-  font-size: 14.5px; font-weight: 600; background: #fff;
-}
-.btn:hover { background: var(--soft); }
-.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.btn.primary:hover { filter: brightness(1.08); }
-
+.hero h1 { font-size: 38px; }
+.lede { font-size: 18px; color: #333a42; }
 .cards { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); }
 .card { background: var(--soft); border: 1px solid var(--line);
         border-radius: var(--radius); padding: 16px; }
