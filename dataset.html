@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data &amp;middot; ResiCLAP: Semantic-Preserving Residual Enhancement for Fine-Grained Impact Sound Retrieval</title>
+<meta name="description" content="Project page for ResiCLAP: Semantic-Preserving Residual Enhancement for Fine-Grained Impact Sound Retrieval">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">Resi<span>CLAP</span></a>
+    <nav><a href="index.html">Overview</a><a href="dataset.html" class="active">Data</a><a href="results.html">Results</a><a href="demo.html">Retrieval demo</a></nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section>
+  <h1>The data</h1>
+  <p class="lede">Teaching a model to hear a single property requires pairs of
+  sounds that differ in <em>that</em> property and nothing else. RealImpact
+  supplies the recordings; a curation pipeline supplies the contrast.</p>
+</section>
+
+<section>
+  <h2>Source recordings</h2>
+  <p><strong>RealImpact</strong> is a set of real recordings of everyday
+  objects struck at controlled points and captured by a dense microphone
+  array. Every recording carries its object, material, strike point and
+  microphone position, which is what makes queries possible that differ only in
+  acoustic detail rather than in category.</p>
+  <p>Training and test splits are separated <strong>by object</strong>, so no
+  object heard during training appears at test time. The held-out pool used
+  throughout this site holds 400 recordings of
+  5 unseen objects &mdash; Mug (ceramic), Bin (plastic), Flowerpot (small ceramic), Vase (wood), Spatula (metal) &mdash;
+  each struck at 5 points and recorded across
+  4 microphone distance rings and a range of angles.</p>
+  <p>Whether the model still works as a general audio search engine is measured
+  separately on <strong>Clotho</strong> and <strong>FSD50K</strong>, two
+  standard audio&ndash;text datasets.</p>
+</section>
+
+<section id="curation">
+  <h2>1. Measuring the three properties</h2>
+  <p>Objects are grouped into materials by name, and every clip is analysed
+  after detecting the moment of the strike. Three properties are measured:</p>
+  <div class="tablewrap"><table><thead><tr><th>Property</th><th>What is measured</th></tr></thead><tbody><tr><td>Brightness</td><td>the centre of gravity of the spectrum over the first second after the strike</td></tr><tr><td>Attack</td><td>how quickly the sound rises to its peak</td></tr><tr><td>Decay</td><td>how long the ring takes to fall by 20&nbsp;dB</td></tr></tbody></table><p class="tnote">Clips whose ring never falls by 20&nbsp;dB before the recording ends are excluded from decay supervision rather than guessed at.</p></div>
+</section>
+
+<section>
+  <h2>2. Making the targets material-relative</h2>
+  <p>A ceramic bowl is brighter than a wooden block in absolute terms even when
+  it is the dullest ceramic in the set, so an absolute threshold would simply
+  re-encode which material it is. Each property is therefore scored
+  <strong>within its own material</strong>, using statistics computed on the
+  training split only. A clip in the bottom of its material's range is labelled
+  <em>low</em>, one in the top <em>high</em>, and the middle band is left
+  unlabelled. Splits are assigned at the object level, so neither an object nor
+  a normalisation statistic ever crosses from training into test.</p>
+</section>
+
+<section>
+  <h2>3. Controlled variants</h2>
+  <p>Natural recordings rarely give two clips of the same object differing in
+  exactly one property. Each reference clip is therefore processed into
+  candidates pushed toward the low and high end of its own material's range:
+  a shelving filter to brighten or dull, and time-warping or a transient boost
+  to sharpen or soften the attack. Every candidate is loudness-matched back to
+  the reference, so loudness can never be the cue that separates them.</p>
+  <p>Processing strength is not fixed in advance. All candidates are generated,
+  re-measured, and then filtered &mdash; so a dull ceramic receives a different
+  push than an already-bright one.</p>
+</section>
+
+<section>
+  <h2>4. What a candidate must survive</h2>
+  <p>A candidate is kept only if it clears every gate below.</p>
+  <div class="pipeline">
+    <div class="stage"><span>1</span><h3>Headroom</h3>
+      <p>The original must have room to move. A clip already at the bright
+      end of its material cannot be brightened further.</p></div>
+    <div class="stage"><span>2</span><h3>Direction</h3>
+      <p>The <em>re-measured</em> property must actually move the intended way.
+      Intent is never assumed from the setting used.</p></div>
+    <div class="stage"><span>3</span><h3>Plausibility</h3>
+      <p>The result must still land inside the range spanned by real
+      recordings of that material.</p></div>
+    <div class="stage"><span>4</span><h3>No leakage</h3>
+      <p>The other two properties must barely move. This is the gate that makes
+      a pair genuinely single-property.</p></div>
+  </div>
+  <p>Finally, every accepted variant must stay close to its original in frozen
+  CLAP's own embedding space, so no variant drifts far enough to change what
+  the clip is a recording <em>of</em>.</p>
+</section>
+
+<section>
+  <h2>5. Why decay has no synthetic variants</h2>
+  <div class="callout warn">
+    <p>Decay is supervised <strong>only by natural recordings</strong>.
+    Synthetic decay variants were built in an earlier pass and then discarded:
+    lengthening or truncating a ring changes how bright and how sharp the clip
+    measures as well, so the pairs were never single-property. Rather than
+    train on supervision we could not keep clean, decay pairs are drawn from
+    natural recordings whose ring time already differs under controlled
+    geometry.</p>
+  </div>
+  <p>This is a deliberate asymmetry rather than an oversight, and it shows in
+  the results: brightness and attack benefit from controlled augmentation,
+  decay does not.</p>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p>Project page for an anonymous submission under review. Audio examples are
+    derived from the RealImpact dataset (MIT license) and are redistributed here
+    for research demonstration.</p>
+  </div>
+</footer>
+<script src="assets/js/data-retrieval.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

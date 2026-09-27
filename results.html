@@ -11,35 +11,43 @@
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="index.html">Resi<span>CLAP</span></a>
-    <nav><a href="index.html">Overview</a><a href="results.html" class="active">Results</a><a href="demo.html">Retrieval demo</a></nav>
+    <nav><a href="index.html">Overview</a><a href="dataset.html">Data</a><a href="results.html" class="active">Results</a><a href="demo.html">Retrieval demo</a></nav>
   </div>
 </header>
 <main class="wrap">
 
 <section>
   <h1>Results</h1>
-  <p class="lede">Two questions drive the evaluation: does bounding the residual
-  actually preserve CLAP, and does the improvement survive outside the
-  conditions it was trained on?</p>
+  <p class="lede">Three questions drive the evaluation: does the enhanced
+  embedding actually find the right sound, does capping the correction really
+  preserve CLAP, and does the improvement survive outside the conditions it was
+  trained on?</p>
+  <p>Fine-grained accuracy rises from 0.232 to 0.549 &mdash; a gain of
+  <strong>+0.317</strong> (95% confidence interval [0.192, 0.447]) &mdash;
+  while general audio search on Clotho and FSD50K stays at or above frozen-CLAP
+  level.</p>
+  <p class="tnote">Two measures are used throughout. <strong>R@1</strong> is how
+  often the single top-ranked recording is a correct one.
+  <strong>nDCG@10</strong> scores the whole top-10 ranking, rewarding correct
+  recordings more the higher they are placed. Higher is better for both.</p>
 </section>
 
 <section id="tradeoff">
   <h2>Does the bound matter?</h2>
-  <p>The table below is the paper's main result. The upper block holds the
-  baselines, the lower block walks from an unconstrained residual to the full
-  model. The ablation separates two mechanisms that are easy to conflate:
-  removing the component <em>parallel</em> to the frozen embedding (orthogonal
-  projection), and limiting the residual's <em>magnitude</em> (the norm
-  bound).</p>
-  <div class="tablewrap"><table><thead><tr><th>Model</th><th>R@1</th><th>Att.</th><th>Dec.</th><th>Bri.</th><th>Macro</th><th>Clotho</th><th>FSD50K</th></tr></thead><tbody><tr><td>Frozen CLAP</td><td>0.208</td><td>0.235</td><td>0.233</td><td>0.229</td><td>0.232</td><td>0.320</td><td>0.375</td></tr><tr><td>FineLAP</td><td>0.208</td><td>0.271</td><td>0.134</td><td>0.242</td><td>0.216</td><td>&mdash;</td><td>&mdash;</td></tr><tr><td>Rerank baseline</td><td>0.417</td><td>0.352</td><td>0.385</td><td>0.368</td><td>0.368</td><td>&mdash;</td><td>&mdash;</td></tr><tr><td>Unconstrained residual</td><td>0.903</td><td>0.804</td><td>0.753</td><td>0.698</td><td>0.752</td><td>0.110</td><td>0.212</td></tr><tr><td>Orth. projection only</td><td>0.875</td><td>0.807</td><td>0.766</td><td>0.661</td><td>0.745</td><td>0.098</td><td>0.213</td></tr><tr><td>Norm bound only</td><td>0.472</td><td>0.455</td><td>0.389</td><td>0.431</td><td>0.425</td><td>0.315</td><td>0.378</td></tr><tr><td>w/o MTR</td><td>0.500</td><td>0.561</td><td>0.359</td><td>0.412</td><td>0.444</td><td>0.348</td><td>0.448</td></tr><tr><td>ResiCLAP (reference)</td><td>0.500</td><td>0.608</td><td>0.366</td><td>0.377</td><td>0.450</td><td>0.347</td><td>0.450</td></tr><tr><td><strong>ResiCLAP (tuned)</strong></td><td><strong>0.667</strong></td><td><strong>0.719</strong></td><td><strong>0.519</strong></td><td><strong>0.409</strong></td><td><strong>0.549</strong></td><td><strong>0.352</strong></td><td><strong>0.473</strong></td></tr></tbody></table><p class="tnote">Fine-grained retrieval: R@1 plus nDCG@10 resolved per attribute &mdash; attack, decay, brightness &mdash; and Macro, their mean. Clotho and FSD50K are broad-retrieval R@1. &mdash; is not evaluated. Fine-grained retrieval uses 400 held-out RealImpact test recordings and 24 queries; broad retrieval uses 200 Clotho and 200 FSD50K examples. Ablations use the reference budgets (&rho;<sub>a</sub>, &rho;<sub>t</sub>) = (0.20, 0.05); tuned budgets are (0.30, 0.40). ResiCLAP rows are means over three seeds.</p></div>
-  <p class="callout">An unconstrained residual reaches the best fine-grained
-  score of all (0.752) but collapses broad retrieval to 34% and 56% of CLAP's
-  Clotho and FSD50K performance. Orthogonal projection alone barely helps
-  &mdash; 0.745 nDCG@10 with only 31% Clotho retention. Adding the norm bound
-  changes the picture completely: fine-grained nDCG@10 stays well above frozen
-  CLAP while broad retrieval returns to its original level. <strong>Residual
-  magnitude, not orthogonal projection, is the mechanism that preserves CLAP's
-  semantic structure.</strong></p>
+  <p>The table below is the paper's main result. The first three rows are
+  comparison systems; the rest walk from a completely uncontrolled correction
+  up to the full model. That walk separates two mechanisms that are easy to
+  confuse: steering the correction <em>perpendicular</em> to the frozen
+  embedding, and capping its <em>length</em>.</p>
+  <div class="tablewrap"><table><thead><tr><th>Model</th><th>R@1</th><th>Att.</th><th>Dec.</th><th>Bri.</th><th>Macro</th><th>Clotho</th><th>FSD50K</th></tr></thead><tbody><tr><td>Frozen CLAP</td><td>0.208</td><td>0.235</td><td>0.233</td><td>0.229</td><td>0.232</td><td>0.320</td><td>0.375</td></tr><tr><td>FineLAP</td><td>0.208</td><td>0.271</td><td>0.134</td><td>0.242</td><td>0.216</td><td>&mdash;</td><td>&mdash;</td></tr><tr><td>Rerank baseline</td><td>0.417</td><td>0.352</td><td>0.385</td><td>0.368</td><td>0.368</td><td>&mdash;</td><td>&mdash;</td></tr><tr><td>Uncontrolled correction</td><td>0.903</td><td>0.804</td><td>0.753</td><td>0.698</td><td>0.752</td><td>0.110</td><td>0.212</td></tr><tr><td>Perpendicular steering only</td><td>0.875</td><td>0.807</td><td>0.766</td><td>0.661</td><td>0.745</td><td>0.098</td><td>0.213</td></tr><tr><td>Length cap only</td><td>0.472</td><td>0.455</td><td>0.389</td><td>0.431</td><td>0.425</td><td>0.315</td><td>0.378</td></tr><tr><td>Without the temporal branch</td><td>0.500</td><td>0.561</td><td>0.359</td><td>0.412</td><td>0.444</td><td>0.348</td><td>0.448</td></tr><tr><td>ResiCLAP (reference)</td><td>0.500</td><td>0.608</td><td>0.366</td><td>0.377</td><td>0.450</td><td>0.347</td><td>0.450</td></tr><tr><td><strong>ResiCLAP (tuned)</strong></td><td><strong>0.667</strong></td><td><strong>0.719</strong></td><td><strong>0.519</strong></td><td><strong>0.409</strong></td><td><strong>0.549</strong></td><td><strong>0.352</strong></td><td><strong>0.473</strong></td></tr></tbody></table><p class="tnote">Fine-grained retrieval: R@1 plus nDCG@10 resolved per attribute &mdash; attack, decay, brightness &mdash; and Macro, their mean. Clotho and FSD50K are broad-retrieval R@1. &mdash; is not evaluated. Fine-grained retrieval uses 400 held-out RealImpact test recordings and 24 queries; broad retrieval uses 200 Clotho and 200 FSD50K examples. Ablations use the reference budgets (&rho;<sub>a</sub>, &rho;<sub>t</sub>) = (0.20, 0.05); tuned budgets are (0.30, 0.40). ResiCLAP rows are means over three seeds. Row names follow the paper's Table 1, where the correction is called a residual: uncontrolled correction = unconstrained residual, perpendicular steering = orthogonal projection, length cap = norm bound.</p></div>
+  <p class="callout">An uncontrolled correction reaches the best fine-grained
+  score of all (0.752) but collapses general search to 34% and 56% of CLAP's
+  Clotho and FSD50K performance. Perpendicular steering on its own barely helps
+  &mdash; 0.745 with only 31% of CLAP's Clotho performance left. Adding the
+  length cap changes the picture completely: fine-grained accuracy stays well
+  above frozen CLAP while general search returns to its original level.
+  <strong>It is the length of the correction, not its direction, that preserves
+  CLAP's semantic structure.</strong></p>
 </section>
 
 <section id="budgets">
@@ -78,14 +86,6 @@
   also that the rerank baseline consumes the same signal measurements that
   define the ground truth, which makes it a demanding, measurement-privileged
   comparison.</p>
-</section>
-
-<section>
-  <h2>Where the errors go</h2>
-  <figure class="fig ">
-  <img src="assets/img/error_breakdown.png" alt="Decomposition of top-1 retrieval errors. Separating material confusions from property confusions shows that th" loading="lazy">
-  <figcaption>Decomposition of top-1 retrieval errors. Separating material confusions from property confusions shows that the residual branches mainly correct the property axis while leaving semantic identity intact.</figcaption>
-</figure>
 </section>
 
 <section>

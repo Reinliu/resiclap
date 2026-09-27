@@ -11,7 +11,7 @@
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="index.html">Resi<span>CLAP</span></a>
-    <nav><a href="index.html" class="active">Overview</a><a href="results.html">Results</a><a href="demo.html">Retrieval demo</a></nav>
+    <nav><a href="index.html" class="active">Overview</a><a href="dataset.html">Data</a><a href="results.html">Results</a><a href="demo.html">Retrieval demo</a></nav>
   </div>
 </header>
 <main class="wrap">
@@ -20,308 +20,140 @@
   <p class="eyebrow">Anonymous submission &middot; under review</p>
   <h1>ResiCLAP: Semantic-Preserving Residual Enhancement for Fine-Grained Impact Sound Retrieval</h1>
   <p class="lede">CLAP retrieves the right <em>kind</em> of sound, but not the
-  right <em>one</em>. ResiCLAP adds bounded residuals to a frozen CLAP embedding
-  so that fine-grained acoustic and temporal detail becomes searchable &mdash;
-  without disturbing the pretrained semantic structure, and without leaving the
+  right <em>one</em>. ResiCLAP adds small, bounded corrections to a frozen CLAP
+  embedding so that fine acoustic detail becomes searchable &mdash; without
+  disturbing what CLAP already knows, and without leaving the ordinary
   single-vector retrieval setup.</p>
   <div class="cta">
     <a class="btn primary" href="demo.html">Listen to retrieval results</a>
     <a class="btn" href="results.html">See the results</a>
-    <a class="btn" href="#method">How it works</a>
+    <a class="btn" href="dataset.html">How the data was built</a>
   </div>
 </section>
 
 <section>
   <h2>The problem</h2>
-  <p>A sound designer searching for a &ldquo;metal impact&rdquo; gets hundreds of
-  results that are all, correctly, metal impacts. What separates a usable take
-  from an unusable one is finer: how bright it is, how sharp the attack is, how
-  long it rings. These properties are <em>category-relative</em> &mdash; a bright
-  metal impact and a bright wooden impact occupy very different absolute
-  spectral ranges &mdash; and global audio&ndash;language embeddings tend to
-  emphasise between-category separation while under-expressing this
-  within-category variation.</p>
+  <p>A sound designer searching for a &ldquo;metal impact&rdquo; gets hundreds
+  of results that are all, correctly, metal impacts. What separates a usable
+  take from an unusable one is finer: how bright it is, how sharp the attack
+  is, how long it rings. These properties are <em>relative to the material</em>
+  &mdash; a bright metal impact and a bright wooden impact sit in very
+  different absolute ranges &mdash; and audio&ndash;language embeddings tend to
+  emphasise the gap between categories while under-expressing this variation
+  within one.</p>
 
   <div class="cards">
     <div class="card">
       <h3>Frozen backbone</h3>
-      <p>Both CLAP encoders stay frozen. Only two small residual branches and
-      their gates are trained.</p>
+      <p>Both CLAP encoders stay frozen. Only two small correction branches and
+      their gates are trained &mdash; 0.37% of CLAP's parameters.</p>
     </div>
     <div class="card">
-      <h3>Bounded residuals</h3>
-      <p>Each residual is projected off the frozen embedding and clipped to a
-      fixed radius, so the output is a bounded rotation of the original vector.</p>
+      <h3>Bounded corrections</h3>
+      <p>Each correction is steered sideways from the frozen embedding and
+      capped in length, so the output can only be a small rotation of the
+      original vector.</p>
     </div>
     <div class="card">
       <h3>Drop-in retrieval</h3>
-      <p>The output is still one normalised 512-d vector. Cosine search over an
-      unmodified CLAP index works unchanged.</p>
+      <p>The output is still one normalised 512-dimensional vector. Cosine
+      search over an unmodified CLAP index works unchanged.</p>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>Headline result</h2>
-  <div class="tablewrap"><table><thead><tr><th>Model</th><th>Fine-grained R@1</th><th>Fine-grained nDCG@10</th><th>Clotho R@1</th><th>FSD50K R@1</th></tr></thead><tbody><tr><td>Frozen CLAP</td><td>0.208</td><td>0.232</td><td>0.320</td><td>0.375</td></tr><tr><td>FineLAP</td><td>0.208</td><td>0.216</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>Rerank baseline</td><td>0.417</td><td>0.368</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>ResiCLAP (reference budgets)</td><td>0.500</td><td>0.450</td><td>0.347</td><td>0.450</td></tr><tr><td><strong>ResiCLAP (tuned budgets)</strong></td><td><strong>0.667</strong></td><td><strong>0.549</strong></td><td><strong>0.352</strong></td><td><strong>0.473</strong></td></tr></tbody></table><p class="tnote">Fine-grained retrieval: 400 held-out RealImpact test recordings, 24 text queries, mean over three seeds. Broad retrieval: 200 Clotho and 200 FSD50K examples. Broad retrieval is not reported for FineLAP, which modifies the text encoder, nor for the rerank baseline, which keeps the CLAP index and only rescores property queries.</p></div>
-  <p>nDCG@10 on fine-grained retrieval rises from 0.232 to 0.549 &mdash; a gain
-  of +0.317 (95% CI [0.192, 0.447]) &mdash; while Clotho and FSD50K retrieval
-  stay at or above frozen-CLAP levels.</p>
-</section>
-
-<section>
-  <h2>At a glance</h2>
-  <div class="stats">
-    <div><strong>0.37%</strong>
-      <span>of CLAP parameters trained</span></div>
-    <div><strong>+0.317</strong>
-      <span>fine-grained nDCG@10 over frozen CLAP</span></div>
-    <div><strong>400</strong>
-      <span>held-out test recordings</span></div>
-    <div><strong>24</strong>
-      <span>evaluation text queries</span></div>
-  </div>
-</section>
-
-<section>
-  <h2>Evaluation data</h2>
-  <p>Fine-grained retrieval is evaluated on <strong>RealImpact</strong>, a set of
-  real recordings of everyday objects struck at controlled points and captured by
-  a dense microphone array. Because every recording carries its object, material,
-  strike point and microphone position, it supports queries that differ only in
-  acoustic detail rather than in category.</p>
-  <p>Training and test splits are disjoint by object, so no object heard at
-  training time appears at test time. The held-out pool used throughout this site
-  contains 400 recordings of
-  5 unseen objects &mdash; Mug (ceramic), Bin (plastic), Flowerpot (small ceramic), Vase (wood), Spatula (metal) &mdash; each
-  struck at 5 points and recorded across
-  4 microphone distance rings and a range of angles.</p>
-  <p>Attribute supervision is <em>category-relative</em>: brightness, attack and
-  decay targets are standardised within each material, so &ldquo;bright&rdquo;
-  means bright relative to other sounds of that material rather than bright in
-  absolute spectral terms. Semantic retention is measured separately on Clotho
-  and FSD50K, which the model never trains on as a retrieval target.</p>
-</section>
-
-<section id="curation">
-  <h2>Dataset curation</h2>
-  <p class="lede">Fine-grained supervision needs pairs that differ in
-  <em>one</em> attribute and nothing else. RealImpact supplies the recordings;
-  the curation pipeline supplies the contrast.</p>
-
-  <h3>1. From recordings to factor measurements</h3>
-  <p>Objects are grouped into materials by name, and every clip is analysed at
-  48&nbsp;kHz after onset detection (first point where a 5&nbsp;ms moving-average
-  envelope reaches 10% of its peak). Three scalar factors are measured:</p>
-  <div class="tablewrap">
-    <table>
-      <thead><tr><th>Factor</th><th>Measured quantity</th><th>Target value</th></tr></thead>
-      <tbody>
-        <tr><td>Brightness</td><td>Spectral centroid of the Hann-windowed active
-          region (up to 1&nbsp;s after onset)</td>
-          <td><code>log10(centroid + 1)</code></td></tr>
-        <tr><td>Attack</td><td>Rise time from onset to 90% of the local envelope
-          peak, within a 100&nbsp;ms window</td>
-          <td><code>-log10(t<sub>90</sub> + 1/f<sub>s</sub>)</code></td></tr>
-        <tr><td>Decay</td><td>T20 from the backward energy-decay curve, noise
-          floor subtracted</td>
-          <td><code>log10(T20 + 1e-4)</code></td></tr>
-      </tbody>
-    </table>
-    <p class="tnote">Higher target means brighter, sharper, or longer-ringing
-    respectively. Clips whose decay curve never crosses &minus;20&nbsp;dB before
-    the recording ends are marked censored and excluded from decay supervision.</p>
-  </div>
-
-  <h3>2. Category-relative targets</h3>
-  <p>A ceramic bowl is brighter than a wooden block in absolute terms even when
-  it is the dullest ceramic in the set, so absolute thresholds would simply
-  re-encode material identity. Each factor is therefore standardised
-  <strong>within its material</strong>, using statistics computed on the training
-  split only. A clip below the 45th percentile of its material's training
-  distribution is labelled <em>low</em>, above the 55th <em>high</em>, and
-  otherwise <em>middle</em>. Splits are assigned at the <strong>object</strong>
-  level with a deterministic seeded hash, stratified by material, so no object
-  and no normalisation statistic ever crosses from training into test.</p>
-
-  <h3>3. Controlled DSP variants</h3>
-  <p>Natural recordings alone rarely give two clips of the same object differing
-  in exactly one attribute. Each reference clip is therefore processed into
-  candidate variants pushed toward the low and high end of its own category.
-  Every candidate is RMS-matched back to the reference and peak-limited at 0.98,
-  so loudness can never be the cue that separates them.</p>
-  <div class="tablewrap">
-    <table>
-      <thead><tr><th>Variant</th><th>Transform</th><th>Parameter sweep</th></tr></thead>
-      <tbody>
-        <tr><td>Brighter / duller</td>
-          <td>Second-order high-shelf biquad, cutoff 2&nbsp;kHz</td>
-          <td><code>&plusmn;3, &plusmn;6, &plusmn;9, &plusmn;12 dB</code></td></tr>
-        <tr><td>Sharper attack</td>
-          <td>Time-warp of the attack segment, <code>t &rarr; t<sup>w</sup></code>
-          </td><td><code>w = 0.5, 0.25, 0.125, 0.0625</code></td></tr>
-        <tr><td>Sharper attack</td>
-          <td>Transient boost <code>1 + s&middot;exp(&minus;t/2ms)</code> over the
-          first 40&nbsp;ms</td><td><code>s = 1, 2, 4</code></td></tr>
-        <tr><td>Softer attack</td>
-          <td>Time-warp of the attack segment</td>
-          <td><code>w = 1.5, 2, 2.5, 3.5, 5</code></td></tr>
-        <tr><td>Softer attack</td>
-          <td><code>sin&sup2;</code> onset ramp</td>
-          <td><code>5, 10, 20 ms</code></td></tr>
-      </tbody>
-    </table>
-    <p class="tnote">The sweep is not a fixed setting applied blindly &mdash; all
-    candidates are generated, measured, and then filtered by the gates below.</p>
-  </div>
-
-  <h3>4. Acceptance gates</h3>
-  <p>A candidate is kept only if it clears every gate. The strength that survives
-  therefore varies per clip, which is the point: a dull ceramic needs a different
-  push than an already-bright one.</p>
-  <div class="pipeline">
-    <div class="stage"><span>1</span><h3>Headroom</h3>
-      <p>The original must have room to move &mdash; below the category's 90th
-      percentile to brighten, above the 10th to dull.</p></div>
-    <div class="stage"><span>2</span><h3>Direction</h3>
-      <p>The <em>re-measured</em> factor must actually move the intended way.
-      Intent is never assumed from the parameter.</p></div>
-    <div class="stage"><span>3</span><h3>Plausibility</h3>
-      <p>The result must land inside the 1st&ndash;99th percentile of real clips
-      of that material and object type.</p></div>
-    <div class="stage"><span>4</span><h3>Leakage</h3>
-      <p>The other two factors must barely move &mdash; the constraint that makes
-      the pair single-attribute.</p></div>
-  </div>
-  <p>Leakage tolerances are asymmetric, because brightening is more likely to
-  disturb a measured attack than the reverse:</p>
-  <div class="tablewrap">
-    <table>
-      <thead><tr><th>Variant type</th><th>Max &Delta;brightness</th>
-        <th>Max &Delta;attack</th><th>Max &Delta;decay</th></tr></thead>
-      <tbody>
-        <tr><td>Brightness variants</td><td>&mdash;</td><td>0.15</td><td>0.15</td></tr>
-        <tr><td>Attack variants</td><td>0.10</td><td>&mdash;</td><td>0.15</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p>Among surviving candidates, the one closest to the category's 25th (low) or
-  75th (high) percentile wins, scored as
-  <code>|measured &minus; target| / (q95 &minus; q05) + 0.1 &times; leakage</code>.
-  Finally, each accepted variant must keep a <strong>frozen-CLAP cosine of at
-  least 0.85</strong> to its original, so no variant drifts far enough to change
-  what the clip is a recording <em>of</em>.</p>
-
-  <h3>5. Why decay has no synthetic variants</h3>
-  <div class="callout warn">
-    <p>Decay is supervised <strong>only by natural recordings</strong>. Synthetic
-    decay variants were generated in an earlier pass &mdash; exponential
-    rescaling of the tail with a fade &mdash; and then discarded, because
-    lengthening or truncating a ring changes how bright and how sharp the clip
-    measures as well, and the processed audio failed the semantic-preservation
-    check. Rather than train on supervision we could not keep clean, decay pairs
-    are drawn from natural RealImpact groups whose ring time already differs
-    under controlled geometry.</p>
-  </div>
-  <p>This is a deliberate asymmetry rather than an oversight, and it is worth
-  stating plainly: brightness and attack benefit from controlled augmentation,
-  decay does not.</p>
-</section>
-
 <section id="method">
-  <h2>Method</h2>
-  <p class="lede">ResiCLAP treats the frozen CLAP embedding as a fixed semantic
-  anchor and learns only bounded corrections around it.</p>
+  <h2>How it works</h2>
+  <p class="lede">ResiCLAP treats the frozen CLAP embedding as a fixed anchor
+  and learns only bounded corrections around it. Two branches produce those
+  corrections: one reads what CLAP already computed internally, the other
+  re-reads the waveform at finer time resolution.</p>
 </section>
 
 <figure class="fig wide">
   <img src="assets/img/architecture.png" alt="Overview of ResiCLAP. Blue blocks are frozen, orange blocks are trained, purple blocks are embeddings. Both CL" loading="lazy">
-  <figcaption>Overview of ResiCLAP. Blue blocks are frozen, orange blocks are trained, purple blocks are embeddings. Both CLAP encoders stay frozen. An attribute residual branch reads patch and late-stage hidden states to recover brightness, attack and decay evidence, while a multi-scale temporal relation branch reads high-resolution features at four offsets. Each residual is projected orthogonally to the frozen embedding <em>z</em><sub>0</sub> and clipped in norm, then both are added back and re-normalised into a single enhanced embedding <em>z</em><sup>&#9733;</sup> that is matched against the unmodified CLAP text embedding by ordinary cosine retrieval.</figcaption>
+  <figcaption>Overview of ResiCLAP. Blue blocks are frozen, orange blocks are trained, purple blocks are embeddings. Both CLAP encoders stay frozen. An attribute branch reads CLAP's own intermediate activations to recover brightness, attack and decay evidence, while a temporal branch re-reads the waveform at four time scales. Each correction is steered sideways from the frozen embedding <em>z</em><sub>0</sub> and capped in length, then both are added back and re-normalised into a single enhanced embedding <em>z</em><sup>&#9733;</sup> that is matched against the unmodified CLAP text embedding by ordinary cosine retrieval.</figcaption>
 </figure>
 
 <section>
-  <h3>1. Attribute residual branch</h3>
-  <p>Probing the frozen HTSAT encoder shows that intermediate layers expose
-  fine-grained attributes more strongly than the final global embedding. We read
-  three of them directly:</p>
-  <div class="tablewrap"><table><thead><tr><th>Attribute</th><th>Source representation</th><th>Dimension</th></tr></thead><tbody><tr><td>Brightness</td><td>patch spectral-band features</td><td>384</td></tr><tr><td>Attack</td><td>patch onset features</td><td>96</td></tr><tr><td>Decay</td><td>stage-3 tail features</td><td>768</td></tr></tbody></table></div>
-  <p>Each is projected to 512-d by a two-layer MLP (hidden width 128, LayerNorm,
-  GELU) and the three projections are merged by a learned sigmoid gated fusion.
-  Every gate is initialised to &minus;2, so each branch starts with a small
-  contribution and has to earn its influence during training.</p>
+  <h3>1. The attribute branch</h3>
+  <p>Probing the frozen audio encoder shows that its intermediate layers carry
+  fine acoustic detail far more strongly than the final embedding does. That
+  detail is already computed, it is simply discarded by the time CLAP produces
+  its output vector. The branch reads three of those intermediate signals
+  directly:</p>
+  <div class="tablewrap"><table><thead><tr><th>Attribute</th><th>Where it is read from</th><th>Size</th></tr></thead><tbody><tr><td>Brightness</td><td>early layers, spectral-band activations</td><td>384</td></tr><tr><td>Attack</td><td>early layers, onset activations</td><td>96</td></tr><tr><td>Decay</td><td>a late layer, ring-tail activations</td><td>768</td></tr></tbody></table></div>
+  <p>Each is mapped to the 512-dimensional CLAP space by a small two-layer
+  network, and the three are merged by learned gates. Every gate starts almost
+  closed, so each signal has to earn its influence during training.</p>
 </section>
 
 <section>
-  <h3>2. Multi-scale temporal residual branch</h3>
-  <p>CLAP's own frame stride is too coarse for transient detail, so this branch
-  reads the waveform at higher resolution. From a 1.5&nbsp;s window beginning
-  100&nbsp;ms before onset we extract 5&nbsp;ms log-mel frames plus envelope,
-  spectral-flux and relative-time features, standardise them, downsample to
-  20&nbsp;ms steps and project to 64-d states.</p>
-  <p>Temporal evolution is then modelled explicitly as <em>relations between
-  time steps</em> at four offsets &mdash; 20, 40, 80 and 160&nbsp;ms &mdash; so
-  the branch sees both short transients and longer evolution. Attribute-specific
-  attention summarises each scale, and a second attribute-specific weighting
-  combines the four scales.</p>
+  <h3>2. The temporal branch</h3>
+  <p>CLAP's internal time resolution is too coarse for transient detail, so
+  this branch re-reads the waveform. From a 1.5&nbsp;second window starting
+  100&nbsp;milliseconds before the strike, it takes a fine-grained
+  spectral-and-loudness description every 5&nbsp;milliseconds.</p>
+  <p>Rather than reading those frames one by one, the branch compares pairs of
+  time steps at four separations &mdash; 20, 40, 80 and 160&nbsp;milliseconds
+  &mdash; so it sees both the sharp transient and the longer ring in the same
+  pass. Each attribute learns which separations matter to it.</p>
   <figure class="fig ">
-  <img src="assets/img/temporal_branch.png" alt="The multi-scale temporal relation branch. Relation sequences are formed over four temporal offsets, summarised" loading="lazy">
-  <figcaption>The multi-scale temporal relation branch. Relation sequences are formed over four temporal offsets, summarised by attribute-specific within-scale attention, then combined by attribute-specific cross-scale weighting before being mapped into the CLAP space.</figcaption>
+  <img src="assets/img/temporal_branch.png" alt="The temporal branch. Pairs of time steps are compared at four separations, summarised separately for each attr" loading="lazy">
+  <figcaption>The temporal branch. Pairs of time steps are compared at four separations, summarised separately for each attribute, then combined across separations before being mapped into the CLAP space.</figcaption>
 </figure>
 </section>
 
 <section>
-  <h3>3. Bounded residual adaptation</h3>
-  <p>This is the part that keeps CLAP intact. Each residual is first projected
-  orthogonally to the frozen embedding, then clipped to a fixed radius:</p>
+  <h3>3. Keeping CLAP intact</h3>
+  <p>This is the part that protects the pretrained model. Each correction is
+  first made perpendicular to the frozen embedding, so it cannot simply amplify
+  or cancel what CLAP already said, and is then capped at a fixed length:</p>
   <div class="eq">
     r&#773;<sub>b</sub> = ClipNorm( r<sub>b</sub> &minus;
     &lang;r<sub>b</sub>, z<sub>0</sub>&rang; z<sub>0</sub> ;
     &rho;<sub>b</sub> ),
     &nbsp;&nbsp; b &isin; {a, t}
   </div>
-  <p>with &rho;<sub>a</sub> bounding the attribute residual and
-  &rho;<sub>t</sub> the temporal residual. Ablations use the reference budgets
-  (0.20, 0.05); the headline model uses the tuned budgets (0.30, 0.40)
-  selected by the sweep on the results page. The bounded residuals are
-  added to the anchor and re-normalised:</p>
+  <p>The caps are &rho;<sub>a</sub> for the attribute correction and
+  &rho;<sub>t</sub> for the temporal one. The capped corrections are added to
+  the anchor and the result is re-normalised:</p>
   <div class="eq">
     z<sup>&#9733;</sup> = ( z<sub>0</sub> + r&#773;<sub>a</sub> +
     r&#773;<sub>t</sub> ) / &#8214; z<sub>0</sub> + r&#773;<sub>a</sub> +
     r&#773;<sub>t</sub> &#8214;<sub>2</sub>
   </div>
-  <p class="callout">Because the residuals are orthogonal to
-  <em>z</em><sub>0</sub> and bounded, the enhanced embedding is a rotation of the
-  original by at most about 14&deg;. Our ablation shows it is the
-  <em>magnitude bound</em>, not the orthogonal projection, that does the work of
-  preserving semantic structure &mdash; see
-  <a href="results.html#tradeoff">the trade-off analysis</a>.</p>
+  <p class="callout">Because the corrections are perpendicular and capped, the
+  enhanced embedding can differ from the original by at most about
+  14&deg;. The ablation shows it is the <em>length cap</em>, not the
+  perpendicular steering, that does the work of preserving CLAP's semantic
+  structure &mdash; see <a href="results.html#tradeoff">the results</a>.</p>
 </section>
 
 <section>
-  <h3>4. Training objective</h3>
-  <p>The bound controls how far the embedding may move; the objective decides
-  what the movement should encode. Two groups of terms are combined:</p>
+  <h3>4. What the training rewards</h3>
+  <p>The cap controls how far the embedding may move; the training objective
+  decides what that movement should encode. Two groups of terms pull against
+  each other:</p>
   <div class="cols">
     <div>
-      <h4>Fine-grained learning</h4>
+      <h4>Learning the fine detail</h4>
       <ul>
-        <li><strong>Prompt classification</strong> aligns the enhanced embedding
-        with its material&ndash;attribute description.</li>
-        <li><strong>Smooth-L1 regression</strong> predicts the category-relative
-        attribute value.</li>
-        <li><strong>Pairwise ranking</strong> preserves the relative ordering
-        between sounds.</li>
+        <li>Match the enhanced embedding to a written description of its
+        material and attribute.</li>
+        <li>Predict the measured attribute value.</li>
+        <li>Preserve the correct ordering between two sounds that differ in
+        that attribute.</li>
       </ul>
     </div>
     <div>
-      <h4>Semantic preservation</h4>
+      <h4>Protecting what CLAP knows</h4>
       <ul>
-        <li><strong>Cosine anchor</strong> penalises deviation from
-        <em>z</em><sub>0</sub>.</li>
-        <li><strong>Semantic contrastive</strong> keeps audio&ndash;text
-        alignment on general audio.</li>
-        <li><strong>Symmetric-KL distillation</strong> matches the frozen and
-        enhanced audio&ndash;text similarity distributions.</li>
+        <li>Penalise drift away from the frozen embedding.</li>
+        <li>Keep ordinary audio&ndash;text matching working on general
+        audio.</li>
+        <li>Keep the enhanced model's similarity pattern close to frozen
+        CLAP's.</li>
       </ul>
     </div>
   </div>
@@ -329,7 +161,7 @@
 
 <section>
   <h3>Training setup</h3>
-  <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>Backbone</td><td>LAION-CLAP <code>clap-htsat-fused</code> (frozen)</td></tr><tr><td>Trained parameters</td><td>residual branches and gates only</td></tr><tr><td>Optimiser</td><td>AdamW, lr 1e&minus;4, weight decay 1e&minus;4</td></tr><tr><td>Gradient clipping</td><td>global norm 5.0</td></tr><tr><td>Epochs</td><td>100</td></tr><tr><td>Alignment temperature</td><td>0.07</td></tr><tr><td>Attribute bound &rho;<sub>a</sub></td><td>0.20 reference / 0.30 tuned</td></tr><tr><td>Temporal bound &rho;<sub>t</sub></td><td>0.05 reference / 0.40 tuned</td></tr><tr><td>Seeds</td><td>7, 17, 27</td></tr></tbody></table></div>
+  <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>Backbone</td><td>LAION-CLAP <code>clap-htsat-fused</code> (frozen)</td></tr><tr><td>Trained parameters</td><td>correction branches and gates only</td></tr><tr><td>Optimiser</td><td>AdamW, learning rate 1e&minus;4, weight decay 1e&minus;4</td></tr><tr><td>Epochs</td><td>100</td></tr><tr><td>Attribute cap &rho;<sub>a</sub></td><td>0.20 reference / 0.30 tuned</td></tr><tr><td>Temporal cap &rho;<sub>t</sub></td><td>0.05 reference / 0.40 tuned</td></tr><tr><td>Seeds</td><td>7, 17, 27</td></tr></tbody></table><p class="tnote">Two settings are reported throughout: a conservative <em>reference</em> pair of caps used for all ablations, and the <em>tuned</em> pair used for the headline model. Both are chosen on validation data, never on the test set.</p></div>
 </section>
 
 </main>

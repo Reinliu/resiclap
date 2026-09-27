@@ -37,8 +37,9 @@ Pass `--skip-audio` to `run.py` to reuse already-transcoded MP3 files.
 
 | Path | Description |
 | --- | --- |
-| `index.html` | Overview, evaluation data, architecture and training objective |
-| `results.html` | Ablations, generalization and error analysis |
+| `index.html` | Overview, architecture and method |
+| `dataset.html` | Source recordings and the curation pipeline |
+| `results.html` | Main table, budget sweep and generalization |
 | `demo.html` | Side-by-side CLAP vs ResiCLAP retrieval with audio |
 | `assets/js/data-retrieval.js` | Generated rankings consumed by the front-end |
 
