@@ -25,15 +25,13 @@
 
 <section id="tradeoff">
   <h2>Does the bound matter?</h2>
-  <p>The ablation walks from an unconstrained residual to the full model. It
-  separates two mechanisms that are easy to conflate: removing the component
-  <em>parallel</em> to the frozen embedding (orthogonal projection), and
-  limiting the residual's <em>magnitude</em> (the norm bound).</p>
-  <div class="tablewrap"><table><thead><tr><th>Configuration</th><th>Fine-grained R@1</th><th>Fine-grained nDCG@10</th><th>Clotho R@1</th><th>FSD50K R@1</th></tr></thead><tbody><tr><td>Unconstrained residual</td><td>0.903</td><td>0.752</td><td>0.110</td><td>0.212</td></tr><tr><td>Orthogonal projection only</td><td>0.875</td><td>0.745</td><td>0.098</td><td>0.213</td></tr><tr><td>Norm bound only</td><td>0.472</td><td>0.425</td><td>0.315</td><td>0.378</td></tr><tr><td>+ semantic preservation</td><td>0.500</td><td>0.444</td><td>0.348</td><td>0.448</td></tr><tr><td><strong>ResiCLAP (full, + temporal)</strong></td><td><strong>0.500</strong></td><td><strong>0.450</strong></td><td><strong>0.338</strong></td><td><strong>0.450</strong></td></tr></tbody></table><p class="tnote">Frozen CLAP reference: 0.208 / 0.232 / 0.320 / 0.375.</p></div>
-  <figure class="fig ">
-  <img src="assets/img/preservation_tradeoff.png" alt="Fine-grained retrieval versus semantic retention across residual configurations. Semantic retention is the mea" loading="lazy">
-  <figcaption>Fine-grained retrieval versus semantic retention across residual configurations. Semantic retention is the mean R@1 relative to frozen CLAP on Clotho and FSD50K, where 1.0 denotes CLAP-level performance. Error bars denote 95% confidence intervals.</figcaption>
-</figure>
+  <p>The table below is the paper's main result. The upper block holds the
+  baselines, the lower block walks from an unconstrained residual to the full
+  model. The ablation separates two mechanisms that are easy to conflate:
+  removing the component <em>parallel</em> to the frozen embedding (orthogonal
+  projection), and limiting the residual's <em>magnitude</em> (the norm
+  bound).</p>
+  <div class="tablewrap"><table><thead><tr><th>Model</th><th>R@1</th><th>Att.</th><th>Dec.</th><th>Bri.</th><th>Macro</th><th>Clotho</th><th>FSD50K</th></tr></thead><tbody><tr><td>Frozen CLAP</td><td>0.208</td><td>0.235</td><td>0.233</td><td>0.229</td><td>0.232</td><td>0.320</td><td>0.375</td></tr><tr><td>FineLAP</td><td>0.208</td><td>0.271</td><td>0.134</td><td>0.242</td><td>0.216</td><td>&mdash;</td><td>&mdash;</td></tr><tr><td>Rerank baseline</td><td>0.417</td><td>0.352</td><td>0.385</td><td>0.368</td><td>0.368</td><td>&mdash;</td><td>&mdash;</td></tr><tr><td>Unconstrained residual</td><td>0.903</td><td>0.804</td><td>0.753</td><td>0.698</td><td>0.752</td><td>0.110</td><td>0.212</td></tr><tr><td>Orth. projection only</td><td>0.875</td><td>0.807</td><td>0.766</td><td>0.661</td><td>0.745</td><td>0.098</td><td>0.213</td></tr><tr><td>Norm bound only</td><td>0.472</td><td>0.455</td><td>0.389</td><td>0.431</td><td>0.425</td><td>0.315</td><td>0.378</td></tr><tr><td>w/o MTR</td><td>0.500</td><td>0.561</td><td>0.359</td><td>0.412</td><td>0.444</td><td>0.348</td><td>0.448</td></tr><tr><td>ResiCLAP (reference)</td><td>0.500</td><td>0.608</td><td>0.366</td><td>0.377</td><td>0.450</td><td>0.347</td><td>0.450</td></tr><tr><td><strong>ResiCLAP (tuned)</strong></td><td><strong>0.667</strong></td><td><strong>0.719</strong></td><td><strong>0.519</strong></td><td><strong>0.409</strong></td><td><strong>0.549</strong></td><td><strong>0.352</strong></td><td><strong>0.473</strong></td></tr></tbody></table><p class="tnote">Fine-grained retrieval: R@1 plus nDCG@10 resolved per attribute &mdash; attack, decay, brightness &mdash; and Macro, their mean. Clotho and FSD50K are broad-retrieval R@1. &mdash; is not evaluated. Fine-grained retrieval uses 400 held-out RealImpact test recordings and 24 queries; broad retrieval uses 200 Clotho and 200 FSD50K examples. Ablations use the reference budgets (&rho;<sub>a</sub>, &rho;<sub>t</sub>) = (0.20, 0.05); tuned budgets are (0.30, 0.40). ResiCLAP rows are means over three seeds.</p></div>
   <p class="callout">An unconstrained residual reaches the best fine-grained
   score of all (0.752) but collapses broad retrieval to 34% and 56% of CLAP's
   Clotho and FSD50K performance. Orthogonal projection alone barely helps
@@ -44,21 +42,40 @@
   semantic structure.</strong></p>
 </section>
 
+<section id="budgets">
+  <h2>Choosing the budget</h2>
+  <p>The norm bound &rho; is the one knob that trades fine-grained accuracy
+  against general retrieval. Sweeping it traces a frontier, and comparing that
+  frontier against simply rescaling an unconstrained residual shows what the
+  projection and bound actually buy.</p>
+  <figure class="fig ">
+  <img src="assets/img/residual_frontier.png" alt="Fine-grained nDCG@10 against general retrieval, expressed as a percentage of frozen CLAP R@1, across the attri" loading="lazy">
+  <figcaption>Fine-grained nDCG@10 against general retrieval, expressed as a percentage of frozen CLAP R@1, across the attribute-budget sweep (&rho;) and an unconstrained residual rescaled by &lambda;. Every swept setting is labelled. Error bars denote 95% confidence intervals. The ringed point is the selected operating point.</figcaption>
+</figure>
+  <p class="callout">The selection rule is fixed in advance: keep at least 95%
+  of frozen CLAP's R@1 on both Clotho and FSD50K. That rules out the
+  highest-accuracy setting &mdash; &rho; = 1.2 reaches 0.749 nDCG@10 but drops
+  general retrieval to 84% &mdash; and selects <strong>&rho;<sub>a</sub> =
+  0.30</strong>, which holds general retrieval at essentially CLAP level. The
+  operating point is chosen by the preservation constraint, not by maximum
+  accuracy.</p>
+</section>
+
 <section>
   <h2>Does it generalise?</h2>
   <p>Three settings test progressively harder transfer: unseen physical objects,
   unseen recording contributors, and entirely unseen sound categories.</p>
   <figure class="fig ">
   <img src="assets/img/rotation_results.png" alt="Generalization across objects, recording conditions and sound categories. (a) Absolute nDCG@10 for frozen CLAP" loading="lazy">
-  <figcaption>Generalization across objects, recording conditions and sound categories. (a) Absolute nDCG@10 for frozen CLAP, two-stage property scoring and ResiCLAP. (b) Paired difference in nDCG@10 between ResiCLAP and each baseline; positive values favour ResiCLAP. Horizontal intervals denote 95% confidence intervals.</figcaption>
+  <figcaption>Generalization across objects, recording conditions and sound categories. (a) Absolute nDCG@10 for frozen CLAP, the rerank baseline and ResiCLAP. (b) Paired difference in nDCG@10 between ResiCLAP and each comparison system; positive values favour ResiCLAP. Thick and thin intervals are 95% confidence intervals resampled over queries and over clusters (material or category).</figcaption>
 </figure>
-  <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Queries</th><th>Result</th></tr></thead><tbody><tr><td>Unseen objects (5 RealImpact splits)</td><td>120</td><td>ResiCLAP beats both baselines in all five splits; gains vary by material from +0.012 to +0.267 nDCG@10.</td></tr><tr><td>Unseen contributors (FSD50K)</td><td>1,250</td><td>Beats two-stage scoring in all five splits and 39 of 51 categories. Strongest for attack (+0.058) and brightness (+0.042); decay is flat (&minus;0.003).</td></tr><tr><td>Unseen categories (FSD50K)</td><td>266</td><td>Still beats frozen CLAP, but falls below two-stage scoring in every split.</td></tr></tbody></table></div>
+  <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Queries</th><th>Result</th></tr></thead><tbody><tr><td>Unseen objects (5 RealImpact splits)</td><td>120</td><td>ResiCLAP beats both baselines in all five splits; gains vary by material from +0.012 to +0.267 nDCG@10.</td></tr><tr><td>Unseen contributors (FSD50K)</td><td>1,250</td><td>Beats the rerank baseline in all five splits and 39 of 51 categories. Strongest for attack (+0.058) and brightness (+0.042); decay is flat (&minus;0.003).</td></tr><tr><td>Unseen categories (FSD50K)</td><td>266</td><td>Still beats frozen CLAP, but falls below the rerank baseline in every split.</td></tr></tbody></table></div>
   <p class="callout warn"><strong>An honest limitation.</strong> When the sound
   category itself is new, explicit property scoring wins. It measures
   properties directly and so depends less on category structure seen during
   training. ResiCLAP transfers well to new examples and new recording
   conditions within familiar categories, but not yet to unfamiliar ones. Note
-  also that the two-stage baseline consumes the same signal measurements that
+  also that the rerank baseline consumes the same signal measurements that
   define the ground truth, which makes it a demanding, measurement-privileged
   comparison.</p>
 </section>

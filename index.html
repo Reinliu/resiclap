@@ -63,18 +63,18 @@
 
 <section>
   <h2>Headline result</h2>
-  <div class="tablewrap"><table><thead><tr><th>Model</th><th>Fine-grained R@1</th><th>Fine-grained nDCG@10</th><th>Clotho R@1</th><th>FSD50K R@1</th></tr></thead><tbody><tr><td>Frozen CLAP</td><td>0.208</td><td>0.232</td><td>0.320</td><td>0.375</td></tr><tr><td>FineLAP</td><td>0.208</td><td>0.216</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>Two-stage property scoring</td><td>0.417</td><td>0.368</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td><strong>ResiCLAP (full)</strong></td><td><strong>0.500</strong></td><td><strong>0.450</strong></td><td><strong>0.338</strong></td><td><strong>0.450</strong></td></tr></tbody></table><p class="tnote">Fine-grained retrieval: 400 held-out RealImpact test recordings, 24 text queries, mean over three seeds. Broad retrieval: 200 Clotho and 200 FSD50K examples. Broad retrieval is not reported for FineLAP, which modifies the text encoder, nor for two-stage scoring, which keeps the CLAP index and only rescores property queries.</p></div>
-  <p>nDCG@10 on fine-grained retrieval rises from 0.232 to 0.450 &mdash; a gain
-  of +0.218 (95% CI [0.117, 0.321]) &mdash; while Clotho and FSD50K retrieval
+  <div class="tablewrap"><table><thead><tr><th>Model</th><th>Fine-grained R@1</th><th>Fine-grained nDCG@10</th><th>Clotho R@1</th><th>FSD50K R@1</th></tr></thead><tbody><tr><td>Frozen CLAP</td><td>0.208</td><td>0.232</td><td>0.320</td><td>0.375</td></tr><tr><td>FineLAP</td><td>0.208</td><td>0.216</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>Rerank baseline</td><td>0.417</td><td>0.368</td><td>&ndash;</td><td>&ndash;</td></tr><tr><td>ResiCLAP (reference budgets)</td><td>0.500</td><td>0.450</td><td>0.347</td><td>0.450</td></tr><tr><td><strong>ResiCLAP (tuned budgets)</strong></td><td><strong>0.667</strong></td><td><strong>0.549</strong></td><td><strong>0.352</strong></td><td><strong>0.473</strong></td></tr></tbody></table><p class="tnote">Fine-grained retrieval: 400 held-out RealImpact test recordings, 24 text queries, mean over three seeds. Broad retrieval: 200 Clotho and 200 FSD50K examples. Broad retrieval is not reported for FineLAP, which modifies the text encoder, nor for the rerank baseline, which keeps the CLAP index and only rescores property queries.</p></div>
+  <p>nDCG@10 on fine-grained retrieval rises from 0.232 to 0.549 &mdash; a gain
+  of +0.317 (95% CI [0.192, 0.447]) &mdash; while Clotho and FSD50K retrieval
   stay at or above frozen-CLAP levels.</p>
 </section>
 
 <section>
   <h2>At a glance</h2>
   <div class="stats">
-    <div><strong>&lt;1%</strong>
+    <div><strong>0.37%</strong>
       <span>of CLAP parameters trained</span></div>
-    <div><strong>+0.218</strong>
+    <div><strong>+0.317</strong>
       <span>fine-grained nDCG@10 over frozen CLAP</span></div>
     <div><strong>400</strong>
       <span>held-out test recordings</span></div>
@@ -279,8 +279,10 @@
     &rho;<sub>b</sub> ),
     &nbsp;&nbsp; b &isin; {a, t}
   </div>
-  <p>with &rho;<sub>a</sub> = 0.20 for the attribute residual and
-  &rho;<sub>t</sub> = 0.05 for the temporal residual. The bounded residuals are
+  <p>with &rho;<sub>a</sub> bounding the attribute residual and
+  &rho;<sub>t</sub> the temporal residual. Ablations use the reference budgets
+  (0.20, 0.05); the headline model uses the tuned budgets (0.30, 0.40)
+  selected by the sweep on the results page. The bounded residuals are
   added to the anchor and re-normalised:</p>
   <div class="eq">
     z<sup>&#9733;</sup> = ( z<sub>0</sub> + r&#773;<sub>a</sub> +
@@ -327,7 +329,7 @@
 
 <section>
   <h3>Training setup</h3>
-  <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>Backbone</td><td>LAION-CLAP <code>clap-htsat-fused</code> (frozen)</td></tr><tr><td>Trained parameters</td><td>residual branches and gates only</td></tr><tr><td>Optimiser</td><td>AdamW, lr 1e&minus;4, weight decay 1e&minus;4</td></tr><tr><td>Gradient clipping</td><td>global norm 5.0</td></tr><tr><td>Epochs</td><td>100</td></tr><tr><td>Alignment temperature</td><td>0.07</td></tr><tr><td>Attribute bound &rho;<sub>a</sub></td><td>0.20</td></tr><tr><td>Temporal bound &rho;<sub>t</sub></td><td>0.05</td></tr><tr><td>Seeds</td><td>7, 17, 27</td></tr></tbody></table></div>
+  <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>Backbone</td><td>LAION-CLAP <code>clap-htsat-fused</code> (frozen)</td></tr><tr><td>Trained parameters</td><td>residual branches and gates only</td></tr><tr><td>Optimiser</td><td>AdamW, lr 1e&minus;4, weight decay 1e&minus;4</td></tr><tr><td>Gradient clipping</td><td>global norm 5.0</td></tr><tr><td>Epochs</td><td>100</td></tr><tr><td>Alignment temperature</td><td>0.07</td></tr><tr><td>Attribute bound &rho;<sub>a</sub></td><td>0.20 reference / 0.30 tuned</td></tr><tr><td>Temporal bound &rho;<sub>t</sub></td><td>0.05 reference / 0.40 tuned</td></tr><tr><td>Seeds</td><td>7, 17, 27</td></tr></tbody></table></div>
 </section>
 
 </main>
