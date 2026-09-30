@@ -187,12 +187,14 @@
       );
       box.appendChild(
         el("p", "hint",
-           "Impacts of one material differ only subtly, which is the whole " +
-           "difficulty. These two clips are the lowest and highest " +
-           query.factor_label.toLowerCase() +
-           " recordings of " + query.material +
-           " in the pool. Play them back to back first — the rankings " +
-           "below are asking for exactly this distinction.")
+           (query.factor === "decay"
+             ? "These are the shortest- and longest-ringing natural " +
+               query.material + " recordings in the pool."
+             : "These use the strongest sweep setting on the exact " +
+               "same source recording, so object, strike and microphone stay " +
+               "fixed. They are exaggerated calibration examples, not ranked " +
+               "retrieval results.") +
+           " Play them back to back first.")
       );
       var row = el("div", "anchorrow");
       [["Lowest", query.anchors.low], ["Highest", query.anchors.high]]
@@ -206,8 +208,11 @@
           );
           info.appendChild(
             el("div", "sub",
-               pair[1].object_name + " · strike " + pair[1].strike_point +
-               " · z=" + pair[1].target_z.toFixed(2))
+               pair[1].showcase_label
+                 ? pair[1].object_name + " · " + pair[1].showcase_label
+                 : pair[1].object_name + " · strike " +
+                   pair[1].strike_point +
+                   " · z=" + pair[1].target_z.toFixed(2))
           );
           item.appendChild(info);
           row.appendChild(item);
