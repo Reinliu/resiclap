@@ -19,21 +19,16 @@
 <section>
   <h1>Retrieval demo</h1>
   <p class="lede">These are real rankings, not illustrations. Each query is
-  encoded once by the frozen CLAP text encoder and scored against all
-  400 held-out test recordings by cosine similarity.
-  The only difference between the two columns is whether the audio embedding is
-  frozen CLAP or ResiCLAP.</p>
+  encoded once by the frozen CLAP text encoder and scored against the held-out
+  test set by cosine similarity. The only difference between the two columns is
+  whether the audio embedding is frozen CLAP or ResiCLAP.</p>
   <p>Each result is a real recording of an object being struck. The name is the
   <strong>struck object</strong> &mdash; the thing making the sound, not a
-  target. The test pool holds 400 recordings of just
-  5 objects
-  (Mug (ceramic), Bin (plastic), Flowerpot (small ceramic), Vase (wood), Spatula (metal)), none of which the model saw during training, so the same name
-  recurs often. Individual recordings differ by where the object was struck
-  (one of 5 strike points) and by which
-  microphone recorded it &mdash; the array spans 4
-  distance rings and a range of angles, both shown beneath each name. Two recordings of the same object
-  can therefore sound quite different, which is exactly the distinction these
-  queries are asking the model to make.</p>
+  target. The held-out objects (Mug (ceramic), Bin (plastic), Flowerpot (small ceramic), Vase (wood), Spatula (metal)) were not seen during training, so
+  the same name recurs often. Individual recordings differ by strike point and
+  microphone position, both shown beneath each name. Two recordings of the same
+  object can therefore sound quite different, which is exactly the distinction
+  these queries are asking the model to make.</p>
   <p>The ranked recordings are deliberately subtle: they are natural impacts
   from the same material, separated only by brightness, attack or decay. To
   make the listening task clear, brightness and attack queries begin with an

@@ -159,8 +159,7 @@
       var delta = resiNdcg(query) - clapNdcg(query);
       var meta = el("div", "meta");
       meta.textContent =
-        query.relevant_in_pool + " of " + query.pool_size +
-        " recordings in the pool satisfy this query";
+        "Matches require both the requested material and property direction";
       summary.appendChild(meta);
       var badge = el(
         "span",

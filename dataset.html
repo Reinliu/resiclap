@@ -31,11 +31,9 @@
   microphone position, which is what makes queries possible that differ only in
   acoustic detail rather than in category.</p>
   <p>Training and test splits are separated <strong>by object</strong>, so no
-  object heard during training appears at test time. The held-out pool used
-  throughout this site holds 400 recordings of
-  5 unseen objects &mdash; Mug (ceramic), Bin (plastic), Flowerpot (small ceramic), Vase (wood), Spatula (metal) &mdash;
-  each struck at 5 points and recorded across
-  4 microphone distance rings and a range of angles.</p>
+  object heard during training appears at test time. The held-out set contains
+  unseen objects &mdash; Mug (ceramic), Bin (plastic), Flowerpot (small ceramic), Vase (wood), Spatula (metal) &mdash; recorded across multiple strike
+  points, microphone distances and angles.</p>
   <p>Whether the model still works as a general audio search engine is measured
   separately on <strong>Clotho</strong> and <strong>FSD50K</strong>, two
   standard audio&ndash;text datasets.</p>
