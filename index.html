@@ -101,35 +101,18 @@
 
 <section>
   <h3>3. Keeping CLAP intact</h3>
-  <p>This is the part that protects the pretrained model. Each correction is
-  first made perpendicular to the frozen embedding, so it cannot simply amplify
-  or cancel what CLAP already said, and is then capped at a fixed length:</p>
-  <div class="eq">
-    r&#773;<sub>b</sub> = ClipNorm( r<sub>b</sub> &minus;
-    &lang;r<sub>b</sub>, z<sub>0</sub>&rang; z<sub>0</sub> ;
-    &rho;<sub>b</sub> ),
-    &nbsp;&nbsp; b &isin; {a, t}
-  </div>
-  <p>The caps are &rho;<sub>a</sub> for the attribute correction and
-  &rho;<sub>t</sub> for the temporal one. The capped corrections are added to
-  the anchor and the result is re-normalised:</p>
-  <div class="eq">
-    z<sup>&#9733;</sup> = ( z<sub>0</sub> + r&#773;<sub>a</sub> +
-    r&#773;<sub>t</sub> ) / &#8214; z<sub>0</sub> + r&#773;<sub>a</sub> +
-    r&#773;<sub>t</sub> &#8214;<sub>2</sub>
-  </div>
-  <p class="callout">Because the corrections are perpendicular and capped, the
-  enhanced embedding can differ from the original by at most about
-  14&deg;. The ablation shows it is the <em>length cap</em>, not the
-  perpendicular steering, that does the work of preserving CLAP's semantic
-  structure &mdash; see <a href="results.html#tradeoff">the results</a>.</p>
+  <p>Each learned correction is constrained before it is added to the frozen
+  CLAP embedding. This lets the model expose fine acoustic detail without
+  replacing the semantic structure that makes CLAP useful for general audio
+  search. The two corrections are added to the frozen embedding and the result
+  is normalised back into a single retrieval vector. The paper gives the full
+  formulation and ablation.</p>
 </section>
 
 <section>
   <h3>4. What the training rewards</h3>
-  <p>The cap controls how far the embedding may move; the training objective
-  decides what that movement should encode. Two groups of terms pull against
-  each other:</p>
+  <p>The training objective balances learning fine acoustic detail with
+  protecting CLAP's existing audio&ndash;text alignment:</p>
   <div class="cols">
     <div>
       <h4>Learning the fine detail</h4>
@@ -156,7 +139,7 @@
 
 <section>
   <h3>Training setup</h3>
-  <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>Backbone</td><td>LAION-CLAP <code>clap-htsat-fused</code> (frozen)</td></tr><tr><td>Trained parameters</td><td>correction branches and gates only</td></tr><tr><td>Optimiser</td><td>AdamW, learning rate 1e&minus;4, weight decay 1e&minus;4</td></tr><tr><td>Epochs</td><td>100</td></tr><tr><td>Attribute cap &rho;<sub>a</sub></td><td>0.20 reference / 0.30 tuned</td></tr><tr><td>Temporal cap &rho;<sub>t</sub></td><td>0.05 reference / 0.40 tuned</td></tr><tr><td>Seeds</td><td>7, 17, 27</td></tr></tbody></table><p class="tnote">Two settings are reported throughout: a conservative <em>reference</em> pair of caps used for all ablations, and the <em>tuned</em> pair used for the headline model. Both are chosen on validation data, never on the test set.</p></div>
+  <div class="tablewrap"><table><thead><tr><th>Setting</th><th>Value</th></tr></thead><tbody><tr><td>Backbone</td><td>LAION-CLAP <code>clap-htsat-fused</code> (frozen)</td></tr><tr><td>Trained parameters</td><td>correction branches and gates only</td></tr><tr><td>Optimiser</td><td>AdamW, learning rate 1e&minus;4, weight decay 1e&minus;4</td></tr><tr><td>Epochs</td><td>100</td></tr><tr><td>Seeds</td><td>7, 17, 27</td></tr></tbody></table></div>
 </section>
 
 </main>
