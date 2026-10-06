@@ -116,16 +116,42 @@
 </section>
 
 <section>
-  <h2>Why decay is handled differently</h2>
+  <h2>Decay curation</h2>
   <p>There is no accepted synthetic decay transform. Extending a tail also
   raises room noise and often changes brightness because high frequencies fade
   faster than low frequencies. Shortening a tail can also alter the measured
   attack. Those edits failed the requirement that only one quality should
   change.</p>
-  <p>Decay therefore uses natural comparisons. The object, material, and strike
-  point stay fixed while microphone distance or angle changes. The ordering is
-  kept only when the measured T20 values provide a clear short, medium, and
-  long ringing sequence.</p>
+  <h3>Current method: natural decay comparisons</h3>
+  <p>The accepted decay data therefore comes from natural recordings. The
+  object, material, and strike point stay fixed while microphone distance or
+  angle changes. The recordings are measured again using T20 and kept only
+  when they form a clear short, medium, and long ringing sequence.</p>
+  <h3>How shorter synthetic decay could be created</h3>
+  <p>Shortening is the safer direction because it removes existing tail energy
+  rather than inventing new sound. Two candidate families can be tested:</p>
+  <ul class="reasons">
+    <li>Apply exponential damping after a protected onset window, using time
+    constants of 30, 60, 120, or 250&nbsp;ms.</li>
+    <li>Apply a raised-cosine tail fade beginning 50, 100, or 200&nbsp;ms after
+    onset.</li>
+  </ul>
+  <p>The protected onset window keeps the initial strike unchanged. Each
+  candidate must then be RMS-matched, peak-limited to 0.98, measured again, and
+  rejected if brightness or attack changes by more than 0.15.</p>
+  <h3>How longer synthetic decay could be created</h3>
+  <p>Lengthening is harder because the missing tail has to be generated. The
+  most faithful option is modal resynthesis. The dominant ringing frequencies
+  are fitted separately, then each frequency's damping time is multiplied by
+  1.5, 2, or 3 before the sound is reconstructed. Treating each frequency
+  separately matters because high frequencies usually fade faster than low
+  frequencies.</p>
+  <p>A longer candidate would be accepted only if its T20 increases in the
+  intended direction, it remains inside the natural decay range of its
+  category, and both brightness and attack move by no more than 0.15. It must
+  also pass a listening check for phasing, metallic ringing, and amplified room
+  noise. These synthetic decay settings are a proposed extension and are not
+  used in the reported model.</p>
 </section>
 
 <section>
