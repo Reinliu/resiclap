@@ -22,6 +22,12 @@
   dull or sharp versus soft without confusing those differences with the type
   of object being struck. We prepared the data so that it learns from real
   sound differences while still keeping CLAP's general knowledge of audio.</p>
+  <div class="stats">
+    <div><strong>1,500</strong><span>curated RealImpact recordings</span></div>
+    <div><strong>34</strong><span>physical objects</span></div>
+    <div><strong>4</strong><span>materials</span></div>
+    <div><strong>2,400</strong><span>recordings available for training</span></div>
+  </div>
 </section>
 
 <section>
@@ -31,6 +37,10 @@
   from ceramic, metal, plastic, and wood. They were struck at different places
   and recorded from different positions, so the collection contains natural
   changes in brightness, attack, and ringing time.</p>
+  <p>RealImpact provides 10,000 distinct impact recordings after selecting one
+  microphone channel for each strike. We keep 1,500 recordings from 34 objects
+  with reliable material labels. The curated set is balanced evenly across the
+  four materials, with 375 recordings per material.</p>
   <p>The final model uses these real recordings as they were captured. It does
   not train on artificially brightened, dulled, sharpened, or lengthened
   versions. Earlier experiments explored those edits, but they are not part of
@@ -44,6 +54,7 @@
   of that object stays in the same group. This prevents the model from hearing
   one recording of an object during training and then being tested on another
   recording of the same object.</p>
+  <div class="tablewrap"><table><thead><tr><th>RealImpact group</th><th>Recordings</th><th>Purpose</th></tr></thead><tbody><tr><td>Training</td><td>800</td><td>teaches the three fine-grained qualities</td></tr><tr><td>Validation</td><td>300</td><td>selects model settings and checkpoints</td></tr><tr><td>Testing</td><td>400</td><td>measures performance on unseen objects</td></tr><tr><td>Total</td><td>1,500</td><td>the complete curated RealImpact subset</td></tr></tbody></table></div>
   <p>This makes the test harder and more realistic. The model must apply what
   it learned to objects it has never heard before.</p>
 </section>
@@ -53,6 +64,7 @@
   <p>For every recording, we first find the moment when the object is struck.
   We then measure three qualities that sound designers commonly listen for.</p>
   <div class="tablewrap"><table><thead><tr><th>Quality</th><th>Meaning in everyday listening</th><th>How it is measured</th></tr></thead><tbody><tr><td>Brightness</td><td>whether the sound feels dull or bright</td><td>how much of its energy sits in higher frequencies</td></tr><tr><td>Attack</td><td>whether the strike begins softly or sharply</td><td>how quickly it rises from the start to its peak</td></tr><tr><td>Decay</td><td>whether the sound is short and dry or keeps ringing</td><td>how long its energy takes to fall after the strike</td></tr></tbody></table><p class="tnote">If a property cannot be measured reliably, that recording is not used to teach that property. The missing value is never guessed.</p></div>
+  <div class="tablewrap"><table><thead><tr><th>Available labels</th><th>Training</th><th>Validation</th><th>Testing</th><th>Total</th></tr></thead><tbody><tr><td>Brightness</td><td>800</td><td>300</td><td>400</td><td>1,500</td></tr><tr><td>Attack</td><td>800</td><td>300</td><td>400</td><td>1,500</td></tr><tr><td>Decay</td><td>798</td><td>300</td><td>399</td><td>1,497</td></tr></tbody></table><p class="tnote">Three recordings do not have a reliable decay measurement. They remain usable for brightness and attack.</p></div>
 </section>
 
 <section>
@@ -105,7 +117,11 @@
   <p>RealImpact teaches the model about fine differences between impact sounds,
   but training on that collection alone can make it worse at general audio
   search. We therefore mix three kinds of examples in every training batch.</p>
-  <div class="tablewrap"><table><thead><tr><th>Part of each batch</th><th>What it teaches</th></tr></thead><tbody><tr><td>Half RealImpact</td><td>fine differences in brightness, attack, and decay</td></tr><tr><td>One quarter Clotho</td><td>matching everyday audio with natural-language captions</td></tr><tr><td>One quarter FSD50K</td><td>recognising a broad range of sound categories</td></tr></tbody></table></div>
+  <div class="tablewrap"><table><thead><tr><th>Training source</th><th>Available recordings</th><th>Share of each batch</th><th>What it teaches</th></tr></thead><tbody><tr><td>RealImpact</td><td>800</td><td>50%</td><td>fine differences in brightness, attack, and decay</td></tr><tr><td>Clotho</td><td>800</td><td>25%</td><td>matching everyday audio with natural-language captions</td></tr><tr><td>FSD50K</td><td>800</td><td>25%</td><td>recognising a broad range of sound categories</td></tr></tbody></table></div>
+  <p>There are 2,400 available training recordings in total. RealImpact makes
+  up half of each batch even though the three sources contain the same number
+  of recordings. This gives fine-grained impact supervision more weight while
+  every batch still includes general audio examples.</p>
   <p>The model learns fine detail and general audio meaning at the same time.
   CLAP itself remains frozen. Only the small ResiCLAP branches and their gates
   are trained.</p>
