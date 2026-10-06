@@ -17,96 +17,106 @@
 <main class="wrap">
 
 <section>
-  <h1>The data</h1>
-  <p class="lede">Teaching a model to hear a single property requires pairs of
-  sounds that differ in <em>that</em> property and nothing else. RealImpact
-  supplies the recordings; a curation pipeline supplies the contrast.</p>
+  <h1>How the training data was prepared</h1>
+  <p class="lede">The model needs to learn differences such as bright versus
+  dull or sharp versus soft without confusing those differences with the type
+  of object being struck. We prepared the data so that it learns from real
+  sound differences while still keeping CLAP's general knowledge of audio.</p>
 </section>
 
 <section>
-  <h2>Source recordings</h2>
-  <p><strong>RealImpact</strong> is a set of real recordings of everyday
-  objects struck at controlled points and captured by a dense microphone
-  array. Every recording carries its object, material, strike point and
-  microphone position, which is what makes queries possible that differ only in
-  acoustic detail rather than in category.</p>
-  <p>Training and test splits are separated <strong>by object</strong>, so no
-  object heard during training appears at test time. The held-out set contains
-  unseen objects &mdash; Mug (ceramic), Bin (plastic), Flowerpot (small ceramic), Vase (wood), Spatula (metal) &mdash; recorded across multiple strike
-  points, microphone distances and angles.</p>
-  <p>Whether the model still works as a general audio search engine is measured
-  separately on <strong>Clotho</strong> and <strong>FSD50K</strong>, two
-  standard audio&ndash;text datasets.</p>
+  <h2>Starting with real impact sounds</h2>
+  <p>The main source is <strong>RealImpact</strong>, a collection of everyday
+  objects being struck in a controlled recording setup. The objects are made
+  from ceramic, metal, plastic, and wood. They were struck at different places
+  and recorded from different positions, so the collection contains natural
+  changes in brightness, attack, and ringing time.</p>
+  <p>The final model uses these real recordings as they were captured. It does
+  not train on artificially brightened, dulled, sharpened, or lengthened
+  versions. Earlier experiments explored those edits, but they are not part of
+  the model reported on this website.</p>
+</section>
+
+<section>
+  <h2>Keeping objects separate</h2>
+  <p>We divide the collection by physical object, not by individual recording.
+  Once an object is placed in training, validation, or testing, every recording
+  of that object stays in the same group. This prevents the model from hearing
+  one recording of an object during training and then being tested on another
+  recording of the same object.</p>
+  <p>This makes the test harder and more realistic. The model must apply what
+  it learned to objects it has never heard before.</p>
 </section>
 
 <section id="curation">
-  <h2>1. Measuring the three properties</h2>
-  <p>Objects are grouped into materials by name, and every clip is analysed
-  after detecting the moment of the strike. Three properties are measured:</p>
-  <div class="tablewrap"><table><thead><tr><th>Property</th><th>What is measured</th></tr></thead><tbody><tr><td>Brightness</td><td>the centre of gravity of the spectrum over the first second after the strike</td></tr><tr><td>Attack</td><td>how quickly the sound rises to its peak</td></tr><tr><td>Decay</td><td>how long the ring takes to fall by 20&nbsp;dB</td></tr></tbody></table><p class="tnote">Clips whose ring never falls by 20&nbsp;dB before the recording ends are excluded from decay supervision rather than guessed at.</p></div>
+  <h2>Turning each sound into three listening qualities</h2>
+  <p>For every recording, we first find the moment when the object is struck.
+  We then measure three qualities that sound designers commonly listen for.</p>
+  <div class="tablewrap"><table><thead><tr><th>Quality</th><th>Meaning in everyday listening</th><th>How it is measured</th></tr></thead><tbody><tr><td>Brightness</td><td>whether the sound feels dull or bright</td><td>how much of its energy sits in higher frequencies</td></tr><tr><td>Attack</td><td>whether the strike begins softly or sharply</td><td>how quickly it rises from the start to its peak</td></tr><tr><td>Decay</td><td>whether the sound is short and dry or keeps ringing</td><td>how long its energy takes to fall after the strike</td></tr></tbody></table><p class="tnote">If a property cannot be measured reliably, that recording is not used to teach that property. The missing value is never guessed.</p></div>
 </section>
 
 <section>
-  <h2>2. Making the targets material-relative</h2>
-  <p>A ceramic bowl is brighter than a wooden block in absolute terms even when
-  it is the dullest ceramic in the set, so an absolute threshold would simply
-  re-encode which material it is. Each property is therefore scored
-  <strong>within its own material</strong>, using statistics computed on the
-  training split only. A clip in the bottom of its material's range is labelled
-  <em>low</em>, one in the top <em>high</em>, and the middle band is left
-  unlabelled. Splits are assigned at the object level, so neither an object nor
-  a normalisation statistic ever crosses from training into test.</p>
+  <h2>Comparing like with like</h2>
+  <p>Brightness does not mean the same thing for every material. Even a dull
+  metal strike may contain more high-frequency energy than a bright wooden
+  strike. A single threshold for the whole collection would mostly teach the
+  model to identify the material.</p>
+  <p>Instead, each recording is compared with other recordings from the same
+  material. A bright ceramic sound is bright relative to other ceramic sounds.
+  A bright wooden sound is bright relative to other wooden sounds. The same
+  rule is used for attack and decay.</p>
+  <p>All ranges used for these comparisons are calculated from the training
+  group only. Information from validation and testing is not used to define
+  what counts as high or low.</p>
 </section>
 
 <section>
-  <h2>3. Controlled variants</h2>
-  <p>Natural recordings rarely give two clips of the same object differing in
-  exactly one property. Each reference clip is therefore processed into
-  candidates pushed toward the low and high end of its own material's range:
-  a shelving filter to brighten or dull, and time-warping or a transient boost
-  to sharpen or soften the attack. Every candidate is loudness-matched back to
-  the reference, so loudness can never be the cue that separates them.</p>
-  <p>Processing strength is not fixed in advance. All candidates are generated,
-  re-measured, and then filtered &mdash; so a dull ceramic receives a different
-  push than an already-bright one.</p>
+  <h2>Teaching through real comparisons</h2>
+  <p>The model learns by comparing natural recordings. For example, it may see
+  two ceramic impacts and learn which one is brighter, which one begins more
+  sharply, or which one rings for longer. Comparisons are only used when the
+  measured difference is clear enough to be meaningful.</p>
+  <p>Decay is also learned from natural recordings. We do not create artificial
+  ringing tails because changing a tail can also change the apparent
+  brightness and attack. Using the real recordings avoids teaching the model
+  from an edit that changes several qualities at once.</p>
 </section>
 
 <section>
-  <h2>4. What a candidate must survive</h2>
-  <p>A candidate is kept only if it clears every gate below.</p>
+  <h2>What was checked before training</h2>
   <div class="pipeline">
-    <div class="stage"><span>1</span><h3>Headroom</h3>
-      <p>The original must have room to move. A clip already at the bright
-      end of its material cannot be brightened further.</p></div>
-    <div class="stage"><span>2</span><h3>Direction</h3>
-      <p>The <em>re-measured</em> property must actually move the intended way.
-      Intent is never assumed from the setting used.</p></div>
-    <div class="stage"><span>3</span><h3>Plausibility</h3>
-      <p>The result must still land inside the range spanned by real
-      recordings of that material.</p></div>
-    <div class="stage"><span>4</span><h3>No leakage</h3>
-      <p>The other two properties must barely move. This is the gate that makes
-      a pair genuinely single-property.</p></div>
+    <div class="stage"><span>1</span><h3>Known material</h3>
+      <p>Only objects with a reliable material label are used for the
+      material-based comparisons.</p></div>
+    <div class="stage"><span>2</span><h3>Reliable measurement</h3>
+      <p>A recording teaches a quality only when that quality can be measured
+      clearly from the waveform.</p></div>
+    <div class="stage"><span>3</span><h3>Clear difference</h3>
+      <p>Two sounds are compared only when their measured difference is large
+      enough to provide a useful training signal.</p></div>
+    <div class="stage"><span>4</span><h3>No object overlap</h3>
+      <p>Recordings from the same physical object never appear on both sides of
+      the training and evaluation split.</p></div>
   </div>
-  <p>Finally, every accepted variant must stay close to its original in frozen
-  CLAP's own embedding space, so no variant drifts far enough to change what
-  the clip is a recording <em>of</em>.</p>
 </section>
 
 <section>
-  <h2>5. Why decay has no synthetic variants</h2>
-  <div class="callout warn">
-    <p>Decay is supervised <strong>only by natural recordings</strong>.
-    Synthetic decay variants were built in an earlier pass and then discarded:
-    lengthening or truncating a ring changes how bright and how sharp the clip
-    measures as well, so the pairs were never single-property. Rather than
-    train on supervision we could not keep clean, decay pairs are drawn from
-    natural recordings whose ring time already differs under controlled
-    geometry.</p>
-  </div>
-  <p>This is a deliberate asymmetry rather than an oversight, and it shows in
-  the results: brightness and attack benefit from controlled augmentation,
-  decay does not.</p>
+  <h2>Keeping CLAP's broader knowledge</h2>
+  <p>RealImpact teaches the model about fine differences between impact sounds,
+  but training on that collection alone can make it worse at general audio
+  search. We therefore mix three kinds of examples in every training batch.</p>
+  <div class="tablewrap"><table><thead><tr><th>Part of each batch</th><th>What it teaches</th></tr></thead><tbody><tr><td>Half RealImpact</td><td>fine differences in brightness, attack, and decay</td></tr><tr><td>One quarter Clotho</td><td>matching everyday audio with natural-language captions</td></tr><tr><td>One quarter FSD50K</td><td>recognising a broad range of sound categories</td></tr></tbody></table></div>
+  <p>The model learns fine detail and general audio meaning at the same time.
+  CLAP itself remains frozen. Only the small ResiCLAP branches and their gates
+  are trained.</p>
+</section>
+
+<section>
+  <h2>What this curation is designed to prevent</h2>
+  <p>The preparation steps stop the model from taking easy shortcuts. It cannot
+  decide that metal always means bright, memorise an object that later appears
+  in testing, treat an uncertain measurement as truth, or improve fine-grained
+  search by forgetting how ordinary audio and text relate.</p>
 </section>
 
 </main>
